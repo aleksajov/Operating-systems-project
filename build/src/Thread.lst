@@ -1,0 +1,212 @@
+GAS LISTING /tmp/ccd4OaUd.s 			page 1
+
+
+   1              		.file	"Thread.cpp"
+   2              		.option pic
+   3              		.option norelax
+   4              		.text
+   5              	.Ltext0:
+   6              		.section	.text._ZN6Thread3runEv,"axG",@progbits,_ZN6Thread3runEv,comdat
+   7              		.align	2
+   8              		.weak	_ZN6Thread3runEv
+  10              	_ZN6Thread3runEv:
+  11              	.LFB3:
+  12              		.file 1 "src/../h/Thread.hpp"
+   1:src/../h/Thread.hpp **** //
+   2:src/../h/Thread.hpp **** // Created by os on 7/14/23.
+   3:src/../h/Thread.hpp **** //
+   4:src/../h/Thread.hpp **** 
+   5:src/../h/Thread.hpp **** #ifndef PROJECT_BASE_THREAD_HPP
+   6:src/../h/Thread.hpp **** #define PROJECT_BASE_THREAD_HPP
+   7:src/../h/Thread.hpp **** 
+   8:src/../h/Thread.hpp **** #include "../h/Scheduler.hpp"
+   9:src/../h/Thread.hpp **** 
+  10:src/../h/Thread.hpp **** class Thread{
+  11:src/../h/Thread.hpp **** public:
+  12:src/../h/Thread.hpp ****     Thread(void (*fun)(void*), void* args);
+  13:src/../h/Thread.hpp ****     Thread(){}
+  14:src/../h/Thread.hpp **** 
+  15:src/../h/Thread.hpp ****     void start();
+  16:src/../h/Thread.hpp **** 
+  17:src/../h/Thread.hpp **** protected:
+  18:src/../h/Thread.hpp ****     //Thread();
+  19:src/../h/Thread.hpp ****     virtual void run(){}
+  13              		.loc 1 19 18
+  14              		.cfi_startproc
+  15              	.LVL0:
+  16 0000 130101FF 		addi	sp,sp,-16
+  17              		.cfi_def_cfa_offset 16
+  18 0004 23348100 		sd	s0,8(sp)
+  19              		.cfi_offset 8, -8
+  20 0008 13040101 		addi	s0,sp,16
+  21              		.cfi_def_cfa 8, 0
+  22              		.loc 1 19 24 is_stmt 0
+  23 000c 03348100 		ld	s0,8(sp)
+  24              		.cfi_restore 8
+  25              		.cfi_def_cfa 2, 16
+  26 0010 13010101 		addi	sp,sp,16
+  27              		.cfi_def_cfa_offset 0
+  28 0014 67800000 		jr	ra
+  29              		.cfi_endproc
+  30              	.LFE3:
+  32              		.text
+  33              		.align	2
+  34              		.globl	_ZN6ThreadC2EPFvPvES0_
+  36              	_ZN6ThreadC2EPFvPvES0_:
+  37              	.LFB5:
+  38              		.file 2 "src/Thread.cpp"
+   1:src/Thread.cpp **** //
+   2:src/Thread.cpp **** // Created by os on 7/14/23.
+   3:src/Thread.cpp **** //
+GAS LISTING /tmp/ccd4OaUd.s 			page 2
+
+
+   4:src/Thread.cpp **** #include "../h/Thread.hpp"
+   5:src/Thread.cpp **** 
+   6:src/Thread.cpp **** Thread::Thread(void (*fun)(void *), void *args) {
+  39              		.loc 2 6 1 is_stmt 1
+  40              		.cfi_startproc
+  41              	.LVL1:
+  42 0000 130101FF 		addi	sp,sp,-16
+  43              		.cfi_def_cfa_offset 16
+  44 0004 23348100 		sd	s0,8(sp)
+  45              		.cfi_offset 8, -8
+  46 0008 13040101 		addi	s0,sp,16
+  47              		.cfi_def_cfa 8, 0
+  48              	.LBB2:
+  49              		.loc 2 6 47 is_stmt 0
+  50 000c 97070000 		lla	a5,_ZTV6Thread+16
+  50      93870700 
+  51 0014 2330F500 		sd	a5,0(a0)
+  52              	.LBE2:
+   7:src/Thread.cpp **** 
+   8:src/Thread.cpp **** }
+  53              		.loc 2 8 1
+  54 0018 03348100 		ld	s0,8(sp)
+  55              		.cfi_restore 8
+  56              		.cfi_def_cfa 2, 16
+  57 001c 13010101 		addi	sp,sp,16
+  58              		.cfi_def_cfa_offset 0
+  59 0020 67800000 		jr	ra
+  60              		.cfi_endproc
+  61              	.LFE5:
+  63              		.globl	_ZN6ThreadC1EPFvPvES0_
+  64              		.set	_ZN6ThreadC1EPFvPvES0_,_ZN6ThreadC2EPFvPvES0_
+  65              		.align	2
+  66              		.globl	_ZN6Thread5startEv
+  68              	_ZN6Thread5startEv:
+  69              	.LFB7:
+   9:src/Thread.cpp **** 
+  10:src/Thread.cpp **** void Thread::start() {
+  70              		.loc 2 10 22 is_stmt 1
+  71              		.cfi_startproc
+  72              	.LVL2:
+  73 0024 130101FF 		addi	sp,sp,-16
+  74              		.cfi_def_cfa_offset 16
+  75 0028 23348100 		sd	s0,8(sp)
+  76              		.cfi_offset 8, -8
+  77 002c 13040101 		addi	s0,sp,16
+  78              		.cfi_def_cfa 8, 0
+  11:src/Thread.cpp **** 
+  12:src/Thread.cpp **** }
+  79              		.loc 2 12 1 is_stmt 0
+  80 0030 03348100 		ld	s0,8(sp)
+  81              		.cfi_restore 8
+  82              		.cfi_def_cfa 2, 16
+  83 0034 13010101 		addi	sp,sp,16
+  84              		.cfi_def_cfa_offset 0
+  85 0038 67800000 		jr	ra
+  86              		.cfi_endproc
+  87              	.LFE7:
+GAS LISTING /tmp/ccd4OaUd.s 			page 3
+
+
+  89              		.weak	_ZTV6Thread
+  90              		.section	.data.rel.ro.local._ZTV6Thread,"awG",@progbits,_ZTV6Thread,comdat
+  91              		.align	3
+  94              	_ZTV6Thread:
+  95 0000 00000000 		.dword	0
+  95      00000000 
+  96 0008 00000000 		.dword	0
+  96      00000000 
+  97 0010 00000000 		.dword	_ZN6Thread3runEv
+  97      00000000 
+  98              		.text
+  99              	.Letext0:
+GAS LISTING /tmp/ccd4OaUd.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 Thread.cpp
+     /tmp/ccd4OaUd.s:10     .text._ZN6Thread3runEv:0000000000000000 _ZN6Thread3runEv
+     /tmp/ccd4OaUd.s:14     .text._ZN6Thread3runEv:0000000000000000 .L0 
+     /tmp/ccd4OaUd.s:16     .text._ZN6Thread3runEv:0000000000000000 .L0 
+     /tmp/ccd4OaUd.s:17     .text._ZN6Thread3runEv:0000000000000004 .L0 
+     /tmp/ccd4OaUd.s:19     .text._ZN6Thread3runEv:0000000000000008 .L0 
+     /tmp/ccd4OaUd.s:21     .text._ZN6Thread3runEv:000000000000000c .L0 
+     /tmp/ccd4OaUd.s:23     .text._ZN6Thread3runEv:000000000000000c .L0 
+     /tmp/ccd4OaUd.s:24     .text._ZN6Thread3runEv:0000000000000010 .L0 
+     /tmp/ccd4OaUd.s:25     .text._ZN6Thread3runEv:0000000000000010 .L0 
+     /tmp/ccd4OaUd.s:27     .text._ZN6Thread3runEv:0000000000000014 .L0 
+     /tmp/ccd4OaUd.s:29     .text._ZN6Thread3runEv:0000000000000018 .L0 
+     /tmp/ccd4OaUd.s:36     .text:0000000000000000 _ZN6ThreadC2EPFvPvES0_
+     /tmp/ccd4OaUd.s:40     .text:0000000000000000 .L0 
+     /tmp/ccd4OaUd.s:42     .text:0000000000000000 .L0 
+     /tmp/ccd4OaUd.s:43     .text:0000000000000004 .L0 
+     /tmp/ccd4OaUd.s:45     .text:0000000000000008 .L0 
+     /tmp/ccd4OaUd.s:47     .text:000000000000000c .L0 
+     /tmp/ccd4OaUd.s:94     .data.rel.ro.local._ZTV6Thread:0000000000000000 _ZTV6Thread
+     /tmp/ccd4OaUd.s:50     .text:000000000000000c .L0 
+     /tmp/ccd4OaUd.s:54     .text:0000000000000018 .L0 
+     /tmp/ccd4OaUd.s:55     .text:000000000000001c .L0 
+     /tmp/ccd4OaUd.s:56     .text:000000000000001c .L0 
+     /tmp/ccd4OaUd.s:58     .text:0000000000000020 .L0 
+     /tmp/ccd4OaUd.s:60     .text:0000000000000024 .L0 
+     /tmp/ccd4OaUd.s:36     .text:0000000000000000 _ZN6ThreadC1EPFvPvES0_
+     /tmp/ccd4OaUd.s:68     .text:0000000000000024 _ZN6Thread5startEv
+     /tmp/ccd4OaUd.s:71     .text:0000000000000024 .L0 
+     /tmp/ccd4OaUd.s:73     .text:0000000000000024 .L0 
+     /tmp/ccd4OaUd.s:74     .text:0000000000000028 .L0 
+     /tmp/ccd4OaUd.s:76     .text:000000000000002c .L0 
+     /tmp/ccd4OaUd.s:78     .text:0000000000000030 .L0 
+     /tmp/ccd4OaUd.s:80     .text:0000000000000030 .L0 
+     /tmp/ccd4OaUd.s:81     .text:0000000000000034 .L0 
+     /tmp/ccd4OaUd.s:82     .text:0000000000000034 .L0 
+     /tmp/ccd4OaUd.s:84     .text:0000000000000038 .L0 
+     /tmp/ccd4OaUd.s:86     .text:000000000000003c .L0 
+     /tmp/ccd4OaUd.s:32     .text._ZN6Thread3runEv:0000000000000018 .L0 
+     /tmp/ccd4OaUd.s:100    .text:000000000000003c .L0 
+     /tmp/ccd4OaUd.s:50     .text:000000000000000c .L0 
+     /tmp/ccd4OaUd.s:317    .debug_abbrev:0000000000000000 .Ldebug_abbrev0
+     /tmp/ccd4OaUd.s:729    .debug_str:00000000000000cd .LASF9
+     /tmp/ccd4OaUd.s:709    .debug_str:0000000000000018 .LASF10
+     /tmp/ccd4OaUd.s:719    .debug_str:0000000000000070 .LASF11
+     /tmp/ccd4OaUd.s:695    .debug_ranges:0000000000000000 .Ldebug_ranges0
+     /tmp/ccd4OaUd.s:703    .debug_line:0000000000000000 .Ldebug_line0
+     /tmp/ccd4OaUd.s:705    .debug_str:0000000000000000 .LASF0
+     /tmp/ccd4OaUd.s:707    .debug_str:0000000000000007 .LASF1
+     /tmp/ccd4OaUd.s:727    .debug_str:00000000000000bb .LASF2
+     /tmp/ccd4OaUd.s:731    .debug_str:0000000000000191 .LASF12
+     /tmp/ccd4OaUd.s:715    .debug_str:0000000000000046 .LASF3
+     /tmp/ccd4OaUd.s:711    .debug_str:0000000000000027 .LASF4
+     /tmp/ccd4OaUd.s:733    .debug_str:000000000000019e .LASF5
+     /tmp/ccd4OaUd.s:717    .debug_str:000000000000005d .LASF6
+     /tmp/ccd4OaUd.s:725    .debug_str:00000000000000aa .LASF13
+     /tmp/ccd4OaUd.s:713    .debug_str:0000000000000036 .LASF14
+GAS LISTING /tmp/ccd4OaUd.s 			page 5
+
+
+     /tmp/ccd4OaUd.s:69     .text:0000000000000024 .LFB7
+     /tmp/ccd4OaUd.s:87     .text:000000000000003c .LFE7
+     /tmp/ccd4OaUd.s:723    .debug_str:00000000000000a5 .LASF8
+     /tmp/ccd4OaUd.s:735    .debug_str:00000000000001a4 .LASF7
+     /tmp/ccd4OaUd.s:721    .debug_str:000000000000008e .LASF15
+     /tmp/ccd4OaUd.s:37     .text:0000000000000000 .LFB5
+     /tmp/ccd4OaUd.s:61     .text:0000000000000024 .LFE5
+     /tmp/ccd4OaUd.s:11     .text._ZN6Thread3runEv:0000000000000000 .LFB3
+     /tmp/ccd4OaUd.s:30     .text._ZN6Thread3runEv:0000000000000018 .LFE3
+     /tmp/ccd4OaUd.s:101    .debug_info:0000000000000000 .Ldebug_info0
+     /tmp/ccd4OaUd.s:5      .text:0000000000000000 .Ltext0
+     /tmp/ccd4OaUd.s:99     .text:000000000000003c .Letext0
+
+NO UNDEFINED SYMBOLS

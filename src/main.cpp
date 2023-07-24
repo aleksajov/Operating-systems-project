@@ -6,7 +6,10 @@
 #include "../lib/console.h"
 #include "../h/trap.hpp"
 #include "../h/syscall_c.hpp"
-#include "../h/Thread.hpp"
+#include "../h/PCB.hpp"
+#include "../h/Scheduler.hpp"
+#include "../h/print.hpp"
+#include "../src/workers.hpp"
 
 int main(){
 
@@ -16,36 +19,23 @@ int main(){
 
     MemoryAllocator::initialize();
 
-    /*
-    Thread* t1=(Thread*)MemoryAllocator::alloc((sizeof (Thread)+MEM_BLOCK_SIZE-1)/MEM_BLOCK_SIZE);
-    Thread* t2=(Thread*)MemoryAllocator::alloc((sizeof (Thread)+MEM_BLOCK_SIZE-1)/MEM_BLOCK_SIZE);
-    Thread* t3=(Thread*)MemoryAllocator::alloc((sizeof (Thread)+MEM_BLOCK_SIZE-1)/MEM_BLOCK_SIZE);
-    Thread* t4=(Thread*)MemoryAllocator::alloc((sizeof (Thread)+MEM_BLOCK_SIZE-1)/MEM_BLOCK_SIZE);
+    PCB *threads[3];
 
-    Scheduler::put(t1);
-    Scheduler::put(t2);
-    Scheduler::put(t3);
-    Scheduler::put(t4);
+    threads[0]= PCB::createThread(nullptr, nullptr);
+    PCB::running=threads[0];//main nit
 
-    t1=Scheduler::get();
-    Scheduler::get();
-    Scheduler::get();
-    Scheduler::get();
+    uint64 *stack1=(uint64*) mem_alloc(DEFAULT_STACK_SIZE);
+    uint64 *stack2=(uint64*) mem_alloc(DEFAULT_STACK_SIZE);
 
-    MemoryAllocator::free(t4);
-    MemoryAllocator::free(t3);
-    MemoryAllocator::free(t2);
-    MemoryAllocator::free(t1);
+    threads[1]= PCB::createThread(workerBodyA, stack1);
+    threads[2]= PCB::createThread(workerBodyB, stack2);
 
-    void* ptr=mem_alloc(129);
-    void* ptr2= mem_alloc(68);
-    int stat=mem_free(ptr);
-    stat= mem_free(ptr2);
-    if(stat<0){
-        __putc('c');
-    }
-    if(ptr);
-*/
+    while(!(threads[1]->isFinished() && threads[2]->isFinished()))
+        PCB::yield();
+
+    for(auto &thread :threads)
+        delete thread;
+    printString("Finished\n");
 
 
     return 0;

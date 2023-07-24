@@ -5,19 +5,19 @@
 #ifndef PROJECT_BASE_SCHEDULER_HPP
 #define PROJECT_BASE_SCHEDULER_HPP
 
-class Thread;
+class PCB;
 
 class Scheduler{
 
 public:
-    static void put(Thread* t);
-    static Thread* get();
+    static void put(PCB* t);
+    static PCB* get();
 
     Scheduler(const Scheduler&)=delete;
     Scheduler& operator=(const Scheduler&)=delete;
 
     struct Elem{
-        Thread* t;
+        PCB* t;
         Elem* next;
     };
 

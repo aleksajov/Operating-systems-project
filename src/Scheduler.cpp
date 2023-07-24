@@ -2,13 +2,15 @@
 // Created by os on 7/14/23.
 //
 #include "../h/Scheduler.hpp"
-#include "../h/MemoryAllocator.hpp"
+//#include "../h/MemoryAllocator.hpp"
+#include "../h/syscall_c.hpp"
 
 Scheduler::Elem* Scheduler::first=nullptr;
 Scheduler::Elem* Scheduler::last=nullptr;
 
-void Scheduler::put(Thread *t) {
-    Elem* newElem=(Elem*)MemoryAllocator::alloc((sizeof(Elem)+MEM_BLOCK_SIZE-1)/MEM_BLOCK_SIZE);
+void Scheduler::put(PCB *t) {
+    //Elem* newElem=(Elem*)MemoryAllocator::alloc((sizeof(Elem)+MEM_BLOCK_SIZE-1)/MEM_BLOCK_SIZE);
+    Elem* newElem=(Elem*) mem_alloc(sizeof (Elem));
     newElem->t=t;
     newElem->next= nullptr;
 
@@ -20,13 +22,14 @@ void Scheduler::put(Thread *t) {
     }
 }
 
-Thread *Scheduler::get() {
+PCB *Scheduler::get() {
     if(first==nullptr)return nullptr;
 
     Elem* elem=first;
-    Thread* t=elem->t;
+    PCB* t=elem->t;
 
-    MemoryAllocator::free(elem);
+    //MemoryAllocator::free(elem);
+    mem_free(elem);
 
     first=first->next;
     if(first==nullptr)last=nullptr;

@@ -30,6 +30,7 @@ public:
     static void popRegs();
 
     static int thread_exit();
+    static void thread_start();
 
 private:
     struct Context{

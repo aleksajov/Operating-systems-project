@@ -53,4 +53,10 @@ int PCB::thread_exit() {
     //delete running niti mozda ovde
     return 0;
 }
+
+void PCB::thread_start() {
+    __asm__ volatile("csrw ra, sepc");
+    __asm__ volatile("sret");
+
+}
     

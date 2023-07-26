@@ -8,7 +8,8 @@
 #include "../lib/hw.h"
 
 uint64 fibonacci(uint64 n);
-void workerBodyA();
-void workerBodyB();
-
+void workerBodyC(void*);
+void workerBodyD(void*);
+void workerBodyA(void*);
+void workerBodyB(void*);
 #endif //PROJECT_BASE_WORKERS_HPP

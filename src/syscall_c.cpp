@@ -44,7 +44,10 @@ int thread_create(thread_t *handle, void (*start_routine)(void *), void *arg) {
     if(stack==nullptr)return -1;
     commonPartSysCalls(0x11, handle, start_routine, arg, stack);
 
-    return 0;
+
+    volatile int ret;
+    __asm__ volatile ("mv %0, a0": "=r"(ret));
+    return ret;
 }
 
 int time_sleep(time_t) {
@@ -60,7 +63,7 @@ int thread_exit() {
 }
 
 void thread_dispatch() {
-
+    commonPartSysCalls(0x13);
 }
 
 void thread_join(thread_t handle) {

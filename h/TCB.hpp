@@ -2,35 +2,40 @@
 // Created by os on 7/18/23.
 //
 
-#ifndef PROJECT_BASE_PCB_HPP
-#define PROJECT_BASE_PCB_HPP
+//sa vezbi 7
+
+#ifndef PROJECT_BASE_TCB_HPP
+#define PROJECT_BASE_TCB_HPP
 
 #include "../lib/hw.h"
 
-class PCB{
+class TCB{
 public:
-    virtual ~PCB();
+    virtual ~TCB();
     bool isFinished() const{
         return finished;
     }
 
     void setFinished(bool finished){
-        PCB::finished = finished;
+        TCB::finished = finished;
+    }
+
+    uint64 getTimeSlice() const{
+        return timeSlice;
     }
 
     using Body=void (*)(void*);
-    static PCB* createThread(Body body, uint64* stack, void* arg);
+    static TCB* createThread(Body body, uint64* stack, void* arg);
 
     static void yield();
 
 
-    static PCB* running;
-
-    static void pushRegs();
-    static void popRegs();
+    static TCB* running;
 
     static int thread_exit();
     static void thread_start();
+
+    void* operator new(uint64 n);
 
 private:
     struct Context{
@@ -41,6 +46,7 @@ private:
     Body body;
     uint64* stack;
     Context context;
+    uint64 timeSlice;
     bool finished;
     void* arg;
 
@@ -49,13 +55,19 @@ private:
     static void contextSwitch(Context *old, Context* running);
 
 
+    friend class Riscv;
 
+    static void threadWrapper();
 
-    PCB(Body body, uint64* stack, void* arg);
+    static uint64 constexpr TIME_SLICE=DEFAULT_TIME_SLICE;
+
+    static uint64  timeSliceCounter;
+
+    explicit TCB(Body body, uint64* stack, void* arg, uint64 timeSlice);
 
 };
 
 
 
 
-#endif //PROJECT_BASE_PCB_HPP
+#endif //PROJECT_BASE_TCB_HPP

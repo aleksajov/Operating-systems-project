@@ -2,61 +2,82 @@
 // Created by os on 7/18/23.
 //
 
-#include "../h/PCB.hpp"
+//sa vezbi 7
+
+#include "../h/TCB.hpp"
 #include "../h/Scheduler.hpp"
 #include "../lib/hw.h"
 #include "../h/syscall_c.hpp"
+#include "../h/riscv.hpp"
+#include "../h/MemoryAllocator.hpp"
 
-PCB* PCB::running=nullptr;
+uint64  TCB::timeSliceCounter=0;
+TCB* TCB::running=nullptr;
 
-void PCB::yield() {
-    pushRegs();
-
-    dispatch();
-
-    popRegs();
+void TCB::yield() {
+    //__asm__ volatile("ecall");
+    Riscv::pushRegs();
+    TCB::timeSliceCounter=0;
+    TCB::dispatch();
+    Riscv::popRegs();
 }
 
-PCB *PCB::createThread(PCB::Body body, uint64* stack, void* arg) {
-    return new PCB(body, stack, arg);
+TCB *TCB::createThread(TCB::Body body, uint64* stack, void* arg) {
+    return new TCB(body, stack, arg, TIME_SLICE);
 }
 
-void PCB::dispatch() {
-    PCB* old=running;
+void TCB::dispatch() {
+    TCB* old=running;
     if(!old->isFinished()){
         Scheduler::put(old);
     }
     running=Scheduler::get();
 
-    PCB::contextSwitch(&old->context, &running->context);
+    TCB::contextSwitch(&old->context, &running->context);
 }
 
-PCB::PCB(PCB::Body body, uint64* stack, void* arg):body(body),
-                            stack(body!=nullptr? stack : nullptr),
-                            context({body!=nullptr? (uint64) body : 0,
+TCB::TCB(TCB::Body body, uint64* stack, void* arg, uint64 timeSlice): body(body),
+                                    stack(body!=nullptr? stack : nullptr),
+                                    context({(uint64)&threadWrapper,
                                      this->stack!=nullptr? (uint64) &this->stack[DEFAULT_STACK_SIZE] : 0//prvo umanjiti za 1 da bi se uslo u taj region
                                      }),
-                            finished(false),
-                            arg(arg)
-
+                                     timeSlice(timeSlice),
+                                     finished(false),
+                                     arg(arg)
     {
         if(body!=nullptr) Scheduler::put(this);
     }
 
-PCB::~PCB() {
-    mem_free(stack);
+TCB::~TCB() {
+    //mem_free(stack);
+    delete[] stack;
 }
 
-int PCB::thread_exit() {
+int TCB::thread_exit() {
     running->setFinished(true);
     yield();
     //delete running niti mozda ovde
     return 0;
 }
 
-void PCB::thread_start() {
-    __asm__ volatile("csrw ra, sepc");
-    __asm__ volatile("sret");
+
+void TCB::threadWrapper() {
+    //ukoliko se zeli preci u korisnicki rezim pri pokretanju niti na ovom mestu
+    //treba promeniti (naglaseno promeniti a ne samo vratiti stare) privilegije
+    //pop SPP i vratiti SPIE?
+    Riscv::ms_sstatus(Riscv::BitMaskSStatus::SSTATUS_SPP);
+    Riscv::mc_sstatus(Riscv::BitMaskSStatus::SSTATUS_SPIE);
+    Riscv::popSppSpie();
+    running->body(running->arg);
+    running->setFinished(true);
+    TCB::yield();
 
 }
+
+void *TCB::operator new(uint64 n) {
+    void* ptr=MemoryAllocator::alloc(((n+MEM_BLOCK_SIZE-1)/MEM_BLOCK_SIZE));
+    return ptr;
+}
+
+
     

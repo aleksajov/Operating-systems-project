@@ -5,6 +5,8 @@
 #ifndef PROJECT_BASE_PRINT_HPP
 #define PROJECT_BASE_PRINT_HPP
 
+#include "../lib/hw.h"
+
 void printString(char const *string);
 
 void printInteger(uint64 integer);

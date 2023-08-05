@@ -7,8 +7,8 @@
 
 #include "../lib/hw.h"
 
-void printString(char const *string);
+void prtString(char const *string);
 
-void printInteger(uint64 integer);
+void prtInt(uint64 integer);
 
 #endif //PROJECT_BASE_PRINT_HPP

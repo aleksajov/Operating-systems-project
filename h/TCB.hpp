@@ -32,10 +32,10 @@ public:
 
     static TCB* running;
 
-    static int thread_exit();
-    static void thread_start();
+    static bool newThrUserMode;
 
     void* operator new(uint64 n);
+    void operator delete[](void *p);
 
 private:
     struct Context{

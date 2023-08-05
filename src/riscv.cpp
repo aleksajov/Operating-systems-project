@@ -8,6 +8,7 @@
 #include "../h/MemoryAllocator.hpp"
 #include "../h/print.hpp"
 #include "../h/syscall_c.hpp"
+#include "../test/printing.hpp"
 
 
 
@@ -66,15 +67,30 @@ void Riscv::handleSupervisorTrap(){
         }
         else if(a0==0x12){
             //thread_exit()
-            TCB::running->setFinished(true);
-            TCB::yield();
-            __asm__ volatile("sd %0, 0x50(fp)": : "r"(0));
+            if(TCB::running->isFinished()){
+                __asm__ volatile("sd %0, 0x50(fp)": : "r"(-1));
+            }
+            else{
+                //TCB* exited=TCB::running;
+                TCB::running->setFinished(true);
+                TCB::dispatch();
+                //delete exited; ovde se nikad ne vraca
+            }
         }
         else if(a0==0x13){
             //thread_dispatch()
             TCB::timeSliceCounter=0;
             TCB::dispatch();
-            printString("synchronous dispatch succeded\n");
+        }
+        else if(a0==0x41){
+            //char getc();
+            char c=__getc();
+            __asm__ volatile("sd %0, 0x50(fp)": : "r"(c));
+        }
+        else if(a0==0x42){
+            //void putc()
+
+            __putc((char)a1);
         }
 
 
@@ -88,6 +104,8 @@ void Riscv::handleSupervisorTrap(){
         //print scause
         //print sepc
         //print stval
+        printInt(scause);
+        //while(true);
     }
 
 }
@@ -121,6 +139,15 @@ void Riscv::hardwareInterrupt() {
 
 
 void Riscv::popSppSpie() {
+
+    Riscv::ms_sstatus(SSTATUS_SPIE);
+    //Riscv::mc_sstatus(SSTATUS_SPIE);
+    if(TCB::newThrUserMode==true){
+        Riscv::mc_sstatus(SSTATUS_SPP);
+    }
+    else{
+        Riscv::ms_sstatus(SSTATUS_SPP);
+    }
     __asm__ volatile("csrw sepc, ra");
     __asm__ volatile("sret");
 }

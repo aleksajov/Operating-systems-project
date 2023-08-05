@@ -4,10 +4,13 @@
 
 
 #include "../h/syscall_c.hpp"
+#include "../lib/console.h"
 
 void commonPartSysCalls(int code, ...){
     __asm__ volatile("ecall");
 }
+
+
 
 
 void *mem_alloc(size_t size) {
@@ -87,9 +90,14 @@ int sem_signal(sem_t id) {
 }
 
 char getc() {
-    return 0;
+    commonPartSysCalls(0x41);
+
+    volatile char ret;
+    __asm__ volatile ("mv %0, a0": "=r"(ret));
+    return ret;
 }
 
-void putc(char) {
-
+void putc(char c) {
+    commonPartSysCalls(0x42, c);
 }
+

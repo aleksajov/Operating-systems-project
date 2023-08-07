@@ -132,6 +132,4 @@ inline void Riscv::mc_sstatus(uint64 mask) {
 }
 
 
-
-
 #endif //PROJECT_BASE_RISCV_HPP

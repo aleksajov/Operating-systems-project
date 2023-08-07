@@ -27,6 +27,8 @@ public:
     using Body=void (*)(void*);
     static TCB* createThread(Body body, uint64* stack, void* arg);
 
+
+    //ne koristiti
     static void yield();
 
 

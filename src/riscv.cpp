@@ -142,7 +142,7 @@ void Riscv::popSppSpie() {
 
     Riscv::ms_sstatus(SSTATUS_SPIE);
     //Riscv::mc_sstatus(SSTATUS_SPIE);
-    if(TCB::newThrUserMode==true){
+    if(TCB::newThrUserMode){
         Riscv::mc_sstatus(SSTATUS_SPP);
     }
     else{

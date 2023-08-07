@@ -20,69 +20,59 @@ uint64 fibonacci(uint64 n)
 void workerBodyC(void*) {
     uint8 i=0;
     for(;i<3;i++){
-        prtString("C: i=");
-        prtInt(i);
-        prtString("\n");
+        printString("C: i=");
+        printInt(i);
+        printString("\n");
     }
-    prtString("C: yield\n");
+    printString("C: yield\n");
     __asm__("li t1, 7");
     TCB::yield();
 
     uint64 t1=0;
     __asm__("mv %[t1], t1" : [t1] "=r"(t1));
 
-    prtString("C: t1=");
-    prtInt(t1);
-    prtString("\n");
+    printString("C: t1=");
+    printInt(t1);
+    printString("\n");
 
     uint64 result= fibonacci(20);
-    prtString("C: fibonaci=");
-    prtInt(result);
-    prtString("\n");
+    printString("C: fibonaci=");
+    printInt(result);
+    printString("\n");
 
     for(;i<6;i++){
-        prtString("C: i=");
-        prtInt(i);
-        prtString("\n");
+        printString("C: i=");
+        printInt(i);
+        printString("\n");
     }
 
 
     /*TCB::running->setFinished(true);
     TCB::yield();*/
-    prtString("WorkerBodyC finished\n");
+    printString("WorkerBodyC finished\n");
 }
 
 void workerBodyD(void*) {
     uint8 i=10;
     for(;i<13;i++){
-        prtString("D: i=");
-        prtInt(i);
-        prtString("\n");
+        printString("D: i=");
+        printInt(i);
+        printString("\n");
     }
 
-    prtString("D: yield\n");
+    printString("D: yield\n");
     __asm__("li t1, 5");
     TCB::yield();
 
-    /*
-    uint64 t1=0;
-    __asm__("mv %[t1], t1" : [t1] "=r"(t1));
-
-
-    printString("B: t1=");
-    printInteger(t1);
-    printString("\n");
-     */
-
     uint64 result= fibonacci(23);
-    prtString("D: fibonaci=");
-    prtInt(result);
-    prtString("\n");
+    printString("D: fibonaci=");
+    printInt(result);
+    printString("\n");
 
     for(;i<16;i++){
-        prtString("D: i=");
-        prtInt(i);
-        prtString("\n");
+        printString("D: i=");
+        printInt(i);
+        printString("\n");
     }
 
 
@@ -90,15 +80,15 @@ void workerBodyD(void*) {
     /*TCB::running->setFinished(true);
     TCB::yield();*/
 
-    prtString("WorkerBodyD finished\n");
+    printString("WorkerBodyD finished\n");
 }
 
 
 void workerBodyA(void*){
     for (uint64 i=0;i<10;i++){
-        prtString("A: i=");
-        prtInt(i);
-        prtString("\n");
+        printString("A: i=");
+        printInt(i);
+        printString("\n");
         for(uint64 j=0;j<10000;j++){
             for(uint64 k=0;k<30000;k++){
                 //busy
@@ -106,7 +96,7 @@ void workerBodyA(void*){
             //TCB::yield();
         }
     }
-    prtString("WorkerBodyA finished\n");
+    printString("WorkerBodyA finished\n");
 }
 
 void workerBodyB(void*){
@@ -119,5 +109,5 @@ void workerBodyB(void*){
             }
         }
     }
-    prtString("WorkerBodyB finished\n");
+    printString("WorkerBodyB finished\n");
 }

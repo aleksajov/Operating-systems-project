@@ -16,11 +16,12 @@ TCB* TCB::running=nullptr;
 bool TCB::newThrUserMode=false;
 
 void TCB::yield() {
-    //__asm__ volatile("ecall");
-    Riscv::pushRegs();
+    /*Riscv::pushRegs();
     TCB::timeSliceCounter=0;
     TCB::dispatch();
-    Riscv::popRegs();
+    Riscv::popRegs();*/
+    __asm__ volatile("li a0, 0x13");
+    __asm__ volatile("ecall");
 }
 
 TCB *TCB::createThread(TCB::Body body, uint64* stack, void* arg) {
@@ -67,13 +68,11 @@ void TCB::threadWrapper() {
     //ukoliko se zeli preci u korisnicki rezim pri pokretanju niti na ovom mestu
     //treba promeniti (naglaseno promeniti a ne samo vratiti stare) privilegije
     //pop SPP i vratiti SPIE?
-    /*Riscv::ms_sstatus(Riscv::BitMaskSStatus::SSTATUS_SPP);
-    Riscv::mc_sstatus(Riscv::BitMaskSStatus::SSTATUS_SPIE);*/
     Riscv::popSppSpie();
     running->body(running->arg);
     running->setFinished(true);
-    TCB::yield();
-
+    //TCB::yield();
+    thread_dispatch();
 }
 
 void *TCB::operator new(uint64 n) {
@@ -84,6 +83,7 @@ void *TCB::operator new(uint64 n) {
 void TCB::operator delete[](void *p) {
     MemoryAllocator::free(p);
 }
+
 
 
 

@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccNUTQna.s 			page 1
+GAS LISTING /tmp/ccFPo4MV.s 			page 1
 
 
    1              		.file	"syscall_c.cpp"
@@ -58,7 +58,7 @@ GAS LISTING /tmp/ccNUTQna.s 			page 1
   46              		.globl	_Z9mem_allocm
   48              	_Z9mem_allocm:
   49              	.LFB4:
-GAS LISTING /tmp/ccNUTQna.s 			page 2
+GAS LISTING /tmp/ccFPo4MV.s 			page 2
 
 
   12:src/syscall_c.cpp **** 
@@ -118,7 +118,7 @@ GAS LISTING /tmp/ccNUTQna.s 			page 1
   84              		.cfi_restore 1
   85 006c 03340101 		ld	s0,16(sp)
   86              		.cfi_restore 8
-GAS LISTING /tmp/ccNUTQna.s 			page 3
+GAS LISTING /tmp/ccFPo4MV.s 			page 3
 
 
   87              		.cfi_def_cfa 2, 32
@@ -178,7 +178,7 @@ GAS LISTING /tmp/ccNUTQna.s 			page 1
  129              		.loc 1 43 1
  130 00a4 1B050500 		sext.w	a0,a0
  131 00a8 83308101 		ld	ra,24(sp)
-GAS LISTING /tmp/ccNUTQna.s 			page 4
+GAS LISTING /tmp/ccFPo4MV.s 			page 4
 
 
  132              		.cfi_restore 1
@@ -238,7 +238,7 @@ GAS LISTING /tmp/ccNUTQna.s 			page 1
  181              		.loc 1 49 9
  182              		.loc 1 49 27 is_stmt 0
  183 00f8 93860900 		mv	a3,s3
-GAS LISTING /tmp/ccNUTQna.s 			page 5
+GAS LISTING /tmp/ccFPo4MV.s 			page 5
 
 
  184 00fc 13860400 		mv	a2,s1
@@ -298,7 +298,7 @@ GAS LISTING /tmp/ccNUTQna.s 			page 1
  226              	.LVL16:
  227              	.L8:
  228              		.cfi_restore_state
-GAS LISTING /tmp/ccNUTQna.s 			page 6
+GAS LISTING /tmp/ccFPo4MV.s 			page 6
 
 
  229              	.LBB5:
@@ -358,7 +358,7 @@ GAS LISTING /tmp/ccNUTQna.s 			page 1
  277              	.LFE7:
  279              		.align	2
  280              		.globl	_Z11thread_exitv
-GAS LISTING /tmp/ccNUTQna.s 			page 7
+GAS LISTING /tmp/ccFPo4MV.s 			page 7
 
 
  282              	_Z11thread_exitv:
@@ -418,7 +418,7 @@ GAS LISTING /tmp/ccNUTQna.s 			page 1
   73:src/syscall_c.cpp **** 
   74:src/syscall_c.cpp **** void thread_dispatch() {
  329              		.loc 1 74 24 is_stmt 1
-GAS LISTING /tmp/ccNUTQna.s 			page 8
+GAS LISTING /tmp/ccFPo4MV.s 			page 8
 
 
  330              		.cfi_startproc
@@ -478,7 +478,7 @@ GAS LISTING /tmp/ccNUTQna.s 			page 1
  380              		.align	2
  381              		.globl	_Z8sem_openPP4_semj
  383              	_Z8sem_openPP4_semj:
-GAS LISTING /tmp/ccNUTQna.s 			page 9
+GAS LISTING /tmp/ccFPo4MV.s 			page 9
 
 
  384              	.LFB11:
@@ -538,7 +538,7 @@ GAS LISTING /tmp/ccNUTQna.s 			page 1
  432              	.LFE12:
  434              		.align	2
  435              		.globl	_Z8sem_waitP4_sem
-GAS LISTING /tmp/ccNUTQna.s 			page 10
+GAS LISTING /tmp/ccFPo4MV.s 			page 10
 
 
  437              	_Z8sem_waitP4_sem:
@@ -598,7 +598,7 @@ GAS LISTING /tmp/ccNUTQna.s 			page 1
  485              		.cfi_endproc
  486              	.LFE14:
  488              		.align	2
-GAS LISTING /tmp/ccNUTQna.s 			page 11
+GAS LISTING /tmp/ccFPo4MV.s 			page 11
 
 
  489              		.globl	_Z4getcv
@@ -658,7 +658,7 @@ GAS LISTING /tmp/ccNUTQna.s 			page 1
  537              	.LFB16:
  105:src/syscall_c.cpp **** 
  106:src/syscall_c.cpp **** void putc(char c) {
-GAS LISTING /tmp/ccNUTQna.s 			page 12
+GAS LISTING /tmp/ccFPo4MV.s 			page 12
 
 
  538              		.loc 1 106 19 is_stmt 1
@@ -696,406 +696,406 @@ GAS LISTING /tmp/ccNUTQna.s 			page 1
  568              	.Letext0:
  569              		.file 2 "src/../h/../lib/hw.h"
  570              		.file 3 "src/../h/syscall_c.hpp"
-GAS LISTING /tmp/ccNUTQna.s 			page 13
+GAS LISTING /tmp/ccFPo4MV.s 			page 13
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 syscall_c.cpp
-     /tmp/ccNUTQna.s:9      .text:0000000000000000 _Z18commonPartSysCallsiz
-     /tmp/ccNUTQna.s:13     .text:0000000000000000 .L0 
-     /tmp/ccNUTQna.s:15     .text:0000000000000000 .L0 
-     /tmp/ccNUTQna.s:16     .text:0000000000000004 .L0 
-     /tmp/ccNUTQna.s:18     .text:0000000000000008 .L0 
-     /tmp/ccNUTQna.s:20     .text:000000000000000c .L0 
-     /tmp/ccNUTQna.s:29     .text:0000000000000028 .L0 
+     /tmp/ccFPo4MV.s:9      .text:0000000000000000 _Z18commonPartSysCallsiz
+     /tmp/ccFPo4MV.s:13     .text:0000000000000000 .L0 
+     /tmp/ccFPo4MV.s:15     .text:0000000000000000 .L0 
+     /tmp/ccFPo4MV.s:16     .text:0000000000000004 .L0 
+     /tmp/ccFPo4MV.s:18     .text:0000000000000008 .L0 
+     /tmp/ccFPo4MV.s:20     .text:000000000000000c .L0 
+     /tmp/ccFPo4MV.s:29     .text:0000000000000028 .L0 
    src/syscall_c.cpp:10     .text:0000000000000028 .L0 
-     /tmp/ccNUTQna.s:36     .text:000000000000002c .L0 
-     /tmp/ccNUTQna.s:37     .text:0000000000000030 .L0 
-     /tmp/ccNUTQna.s:38     .text:0000000000000030 .L0 
-     /tmp/ccNUTQna.s:40     .text:0000000000000034 .L0 
-     /tmp/ccNUTQna.s:42     .text:0000000000000038 .L0 
-     /tmp/ccNUTQna.s:48     .text:0000000000000038 _Z9mem_allocm
-     /tmp/ccNUTQna.s:51     .text:0000000000000038 .L0 
-     /tmp/ccNUTQna.s:53     .text:0000000000000038 .L0 
-     /tmp/ccNUTQna.s:54     .text:000000000000003c .L0 
-     /tmp/ccNUTQna.s:57     .text:0000000000000044 .L0 
-     /tmp/ccNUTQna.s:58     .text:0000000000000044 .L0 
-     /tmp/ccNUTQna.s:60     .text:0000000000000048 .L0 
-     /tmp/ccNUTQna.s:62     .text:0000000000000048 .L0 
-     /tmp/ccNUTQna.s:63     .text:0000000000000048 .L0 
-     /tmp/ccNUTQna.s:65     .text:000000000000004c .L0 
-     /tmp/ccNUTQna.s:71     .text:000000000000005c .L0 
-     /tmp/ccNUTQna.s:72     .text:000000000000005c .L0 
+     /tmp/ccFPo4MV.s:36     .text:000000000000002c .L0 
+     /tmp/ccFPo4MV.s:37     .text:0000000000000030 .L0 
+     /tmp/ccFPo4MV.s:38     .text:0000000000000030 .L0 
+     /tmp/ccFPo4MV.s:40     .text:0000000000000034 .L0 
+     /tmp/ccFPo4MV.s:42     .text:0000000000000038 .L0 
+     /tmp/ccFPo4MV.s:48     .text:0000000000000038 _Z9mem_allocm
+     /tmp/ccFPo4MV.s:51     .text:0000000000000038 .L0 
+     /tmp/ccFPo4MV.s:53     .text:0000000000000038 .L0 
+     /tmp/ccFPo4MV.s:54     .text:000000000000003c .L0 
+     /tmp/ccFPo4MV.s:57     .text:0000000000000044 .L0 
+     /tmp/ccFPo4MV.s:58     .text:0000000000000044 .L0 
+     /tmp/ccFPo4MV.s:60     .text:0000000000000048 .L0 
+     /tmp/ccFPo4MV.s:62     .text:0000000000000048 .L0 
+     /tmp/ccFPo4MV.s:63     .text:0000000000000048 .L0 
+     /tmp/ccFPo4MV.s:65     .text:000000000000004c .L0 
+     /tmp/ccFPo4MV.s:71     .text:000000000000005c .L0 
+     /tmp/ccFPo4MV.s:72     .text:000000000000005c .L0 
    src/syscall_c.cpp:28     .text:000000000000005c .L0 
-     /tmp/ccNUTQna.s:80     .text:0000000000000064 .L0 
-     /tmp/ccNUTQna.s:81     .text:0000000000000064 .L0 
-     /tmp/ccNUTQna.s:83     .text:0000000000000068 .L0 
-     /tmp/ccNUTQna.s:84     .text:000000000000006c .L0 
-     /tmp/ccNUTQna.s:86     .text:0000000000000070 .L0 
-     /tmp/ccNUTQna.s:87     .text:0000000000000070 .L0 
-     /tmp/ccNUTQna.s:89     .text:0000000000000074 .L0 
-     /tmp/ccNUTQna.s:91     .text:0000000000000078 .L0 
-     /tmp/ccNUTQna.s:97     .text:0000000000000078 _Z8mem_freePv
-     /tmp/ccNUTQna.s:100    .text:0000000000000078 .L0 
-     /tmp/ccNUTQna.s:102    .text:0000000000000078 .L0 
-     /tmp/ccNUTQna.s:103    .text:000000000000007c .L0 
-     /tmp/ccNUTQna.s:106    .text:0000000000000084 .L0 
-     /tmp/ccNUTQna.s:107    .text:0000000000000084 .L0 
-     /tmp/ccNUTQna.s:109    .text:0000000000000088 .L0 
-     /tmp/ccNUTQna.s:112    .text:000000000000008c .L0 
-     /tmp/ccNUTQna.s:113    .text:000000000000008c .L0 
-     /tmp/ccNUTQna.s:118    .text:0000000000000098 .L0 
-     /tmp/ccNUTQna.s:119    .text:0000000000000098 .L0 
+     /tmp/ccFPo4MV.s:80     .text:0000000000000064 .L0 
+     /tmp/ccFPo4MV.s:81     .text:0000000000000064 .L0 
+     /tmp/ccFPo4MV.s:83     .text:0000000000000068 .L0 
+     /tmp/ccFPo4MV.s:84     .text:000000000000006c .L0 
+     /tmp/ccFPo4MV.s:86     .text:0000000000000070 .L0 
+     /tmp/ccFPo4MV.s:87     .text:0000000000000070 .L0 
+     /tmp/ccFPo4MV.s:89     .text:0000000000000074 .L0 
+     /tmp/ccFPo4MV.s:91     .text:0000000000000078 .L0 
+     /tmp/ccFPo4MV.s:97     .text:0000000000000078 _Z8mem_freePv
+     /tmp/ccFPo4MV.s:100    .text:0000000000000078 .L0 
+     /tmp/ccFPo4MV.s:102    .text:0000000000000078 .L0 
+     /tmp/ccFPo4MV.s:103    .text:000000000000007c .L0 
+     /tmp/ccFPo4MV.s:106    .text:0000000000000084 .L0 
+     /tmp/ccFPo4MV.s:107    .text:0000000000000084 .L0 
+     /tmp/ccFPo4MV.s:109    .text:0000000000000088 .L0 
+     /tmp/ccFPo4MV.s:112    .text:000000000000008c .L0 
+     /tmp/ccFPo4MV.s:113    .text:000000000000008c .L0 
+     /tmp/ccFPo4MV.s:118    .text:0000000000000098 .L0 
+     /tmp/ccFPo4MV.s:119    .text:0000000000000098 .L0 
    src/syscall_c.cpp:41     .text:0000000000000098 .L0 
-     /tmp/ccNUTQna.s:127    .text:00000000000000a0 .L0 
-     /tmp/ccNUTQna.s:128    .text:00000000000000a0 .L0 
-     /tmp/ccNUTQna.s:130    .text:00000000000000a4 .L0 
-     /tmp/ccNUTQna.s:132    .text:00000000000000ac .L0 
-     /tmp/ccNUTQna.s:134    .text:00000000000000b0 .L0 
-     /tmp/ccNUTQna.s:135    .text:00000000000000b0 .L0 
-     /tmp/ccNUTQna.s:137    .text:00000000000000b4 .L0 
-     /tmp/ccNUTQna.s:139    .text:00000000000000b8 .L0 
-     /tmp/ccNUTQna.s:145    .text:00000000000000b8 _Z13thread_createPP3TCBPFvPvES2_
-GAS LISTING /tmp/ccNUTQna.s 			page 14
+     /tmp/ccFPo4MV.s:127    .text:00000000000000a0 .L0 
+     /tmp/ccFPo4MV.s:128    .text:00000000000000a0 .L0 
+     /tmp/ccFPo4MV.s:130    .text:00000000000000a4 .L0 
+     /tmp/ccFPo4MV.s:132    .text:00000000000000ac .L0 
+     /tmp/ccFPo4MV.s:134    .text:00000000000000b0 .L0 
+     /tmp/ccFPo4MV.s:135    .text:00000000000000b0 .L0 
+     /tmp/ccFPo4MV.s:137    .text:00000000000000b4 .L0 
+     /tmp/ccFPo4MV.s:139    .text:00000000000000b8 .L0 
+     /tmp/ccFPo4MV.s:145    .text:00000000000000b8 _Z13thread_createPP3TCBPFvPvES2_
+GAS LISTING /tmp/ccFPo4MV.s 			page 14
 
 
-     /tmp/ccNUTQna.s:148    .text:00000000000000b8 .L0 
-     /tmp/ccNUTQna.s:150    .text:00000000000000b8 .L0 
-     /tmp/ccNUTQna.s:151    .text:00000000000000bc .L0 
-     /tmp/ccNUTQna.s:157    .text:00000000000000d0 .L0 
-     /tmp/ccNUTQna.s:158    .text:00000000000000d0 .L0 
-     /tmp/ccNUTQna.s:159    .text:00000000000000d0 .L0 
-     /tmp/ccNUTQna.s:160    .text:00000000000000d0 .L0 
-     /tmp/ccNUTQna.s:161    .text:00000000000000d0 .L0 
-     /tmp/ccNUTQna.s:163    .text:00000000000000d4 .L0 
-     /tmp/ccNUTQna.s:169    .text:00000000000000e0 .L0 
-     /tmp/ccNUTQna.s:172    .text:00000000000000e4 .L0 
-     /tmp/ccNUTQna.s:173    .text:00000000000000e4 .L0 
-     /tmp/ccNUTQna.s:180    .text:00000000000000f4 .L0 
-     /tmp/ccNUTQna.s:182    .text:00000000000000f8 .L0 
-     /tmp/ccNUTQna.s:183    .text:00000000000000f8 .L0 
-     /tmp/ccNUTQna.s:194    .text:0000000000000110 .L0 
-     /tmp/ccNUTQna.s:195    .text:0000000000000110 .L0 
+     /tmp/ccFPo4MV.s:148    .text:00000000000000b8 .L0 
+     /tmp/ccFPo4MV.s:150    .text:00000000000000b8 .L0 
+     /tmp/ccFPo4MV.s:151    .text:00000000000000bc .L0 
+     /tmp/ccFPo4MV.s:157    .text:00000000000000d0 .L0 
+     /tmp/ccFPo4MV.s:158    .text:00000000000000d0 .L0 
+     /tmp/ccFPo4MV.s:159    .text:00000000000000d0 .L0 
+     /tmp/ccFPo4MV.s:160    .text:00000000000000d0 .L0 
+     /tmp/ccFPo4MV.s:161    .text:00000000000000d0 .L0 
+     /tmp/ccFPo4MV.s:163    .text:00000000000000d4 .L0 
+     /tmp/ccFPo4MV.s:169    .text:00000000000000e0 .L0 
+     /tmp/ccFPo4MV.s:172    .text:00000000000000e4 .L0 
+     /tmp/ccFPo4MV.s:173    .text:00000000000000e4 .L0 
+     /tmp/ccFPo4MV.s:180    .text:00000000000000f4 .L0 
+     /tmp/ccFPo4MV.s:182    .text:00000000000000f8 .L0 
+     /tmp/ccFPo4MV.s:183    .text:00000000000000f8 .L0 
+     /tmp/ccFPo4MV.s:194    .text:0000000000000110 .L0 
+     /tmp/ccFPo4MV.s:195    .text:0000000000000110 .L0 
    src/syscall_c.cpp:58     .text:0000000000000110 .L0 
-     /tmp/ccNUTQna.s:203    .text:0000000000000118 .L0 
-     /tmp/ccNUTQna.s:204    .text:0000000000000118 .L0 
-     /tmp/ccNUTQna.s:208    .text:0000000000000120 .L0 
-     /tmp/ccNUTQna.s:209    .text:0000000000000124 .L0 
-     /tmp/ccNUTQna.s:210    .text:0000000000000124 .L0 
-     /tmp/ccNUTQna.s:212    .text:0000000000000128 .L0 
-     /tmp/ccNUTQna.s:213    .text:0000000000000128 .L0 
-     /tmp/ccNUTQna.s:215    .text:000000000000012c .L0 
-     /tmp/ccNUTQna.s:218    .text:0000000000000130 .L0 
-     /tmp/ccNUTQna.s:221    .text:0000000000000134 .L0 
-     /tmp/ccNUTQna.s:224    .text:0000000000000138 .L0 
-     /tmp/ccNUTQna.s:228    .text:000000000000013c .L0 
-     /tmp/ccNUTQna.s:231    .text:000000000000013c .L0 
-     /tmp/ccNUTQna.s:232    .text:000000000000013c .L0 
-     /tmp/ccNUTQna.s:246    .text:000000000000015c .L0 
-     /tmp/ccNUTQna.s:251    .text:0000000000000164 .L0 
-     /tmp/ccNUTQna.s:257    .text:0000000000000164 _Z10time_sleepm
-     /tmp/ccNUTQna.s:260    .text:0000000000000164 .L0 
-     /tmp/ccNUTQna.s:261    .text:0000000000000164 .L0 
-     /tmp/ccNUTQna.s:262    .text:0000000000000168 .L0 
-     /tmp/ccNUTQna.s:264    .text:000000000000016c .L0 
-     /tmp/ccNUTQna.s:266    .text:0000000000000170 .L0 
-     /tmp/ccNUTQna.s:268    .text:0000000000000170 .L0 
-     /tmp/ccNUTQna.s:269    .text:0000000000000170 .L0 
-     /tmp/ccNUTQna.s:271    .text:0000000000000178 .L0 
-     /tmp/ccNUTQna.s:272    .text:0000000000000178 .L0 
-     /tmp/ccNUTQna.s:274    .text:000000000000017c .L0 
-     /tmp/ccNUTQna.s:276    .text:0000000000000180 .L0 
-     /tmp/ccNUTQna.s:282    .text:0000000000000180 _Z11thread_exitv
-     /tmp/ccNUTQna.s:285    .text:0000000000000180 .L0 
-     /tmp/ccNUTQna.s:286    .text:0000000000000180 .L0 
-     /tmp/ccNUTQna.s:287    .text:0000000000000184 .L0 
-     /tmp/ccNUTQna.s:290    .text:000000000000018c .L0 
-     /tmp/ccNUTQna.s:291    .text:000000000000018c .L0 
-     /tmp/ccNUTQna.s:293    .text:0000000000000190 .L0 
-     /tmp/ccNUTQna.s:295    .text:0000000000000190 .L0 
-     /tmp/ccNUTQna.s:296    .text:0000000000000190 .L0 
-     /tmp/ccNUTQna.s:300    .text:000000000000019c .L0 
-     /tmp/ccNUTQna.s:301    .text:000000000000019c .L0 
-GAS LISTING /tmp/ccNUTQna.s 			page 15
+     /tmp/ccFPo4MV.s:203    .text:0000000000000118 .L0 
+     /tmp/ccFPo4MV.s:204    .text:0000000000000118 .L0 
+     /tmp/ccFPo4MV.s:208    .text:0000000000000120 .L0 
+     /tmp/ccFPo4MV.s:209    .text:0000000000000124 .L0 
+     /tmp/ccFPo4MV.s:210    .text:0000000000000124 .L0 
+     /tmp/ccFPo4MV.s:212    .text:0000000000000128 .L0 
+     /tmp/ccFPo4MV.s:213    .text:0000000000000128 .L0 
+     /tmp/ccFPo4MV.s:215    .text:000000000000012c .L0 
+     /tmp/ccFPo4MV.s:218    .text:0000000000000130 .L0 
+     /tmp/ccFPo4MV.s:221    .text:0000000000000134 .L0 
+     /tmp/ccFPo4MV.s:224    .text:0000000000000138 .L0 
+     /tmp/ccFPo4MV.s:228    .text:000000000000013c .L0 
+     /tmp/ccFPo4MV.s:231    .text:000000000000013c .L0 
+     /tmp/ccFPo4MV.s:232    .text:000000000000013c .L0 
+     /tmp/ccFPo4MV.s:246    .text:000000000000015c .L0 
+     /tmp/ccFPo4MV.s:251    .text:0000000000000164 .L0 
+     /tmp/ccFPo4MV.s:257    .text:0000000000000164 _Z10time_sleepm
+     /tmp/ccFPo4MV.s:260    .text:0000000000000164 .L0 
+     /tmp/ccFPo4MV.s:261    .text:0000000000000164 .L0 
+     /tmp/ccFPo4MV.s:262    .text:0000000000000168 .L0 
+     /tmp/ccFPo4MV.s:264    .text:000000000000016c .L0 
+     /tmp/ccFPo4MV.s:266    .text:0000000000000170 .L0 
+     /tmp/ccFPo4MV.s:268    .text:0000000000000170 .L0 
+     /tmp/ccFPo4MV.s:269    .text:0000000000000170 .L0 
+     /tmp/ccFPo4MV.s:271    .text:0000000000000178 .L0 
+     /tmp/ccFPo4MV.s:272    .text:0000000000000178 .L0 
+     /tmp/ccFPo4MV.s:274    .text:000000000000017c .L0 
+     /tmp/ccFPo4MV.s:276    .text:0000000000000180 .L0 
+     /tmp/ccFPo4MV.s:282    .text:0000000000000180 _Z11thread_exitv
+     /tmp/ccFPo4MV.s:285    .text:0000000000000180 .L0 
+     /tmp/ccFPo4MV.s:286    .text:0000000000000180 .L0 
+     /tmp/ccFPo4MV.s:287    .text:0000000000000184 .L0 
+     /tmp/ccFPo4MV.s:290    .text:000000000000018c .L0 
+     /tmp/ccFPo4MV.s:291    .text:000000000000018c .L0 
+     /tmp/ccFPo4MV.s:293    .text:0000000000000190 .L0 
+     /tmp/ccFPo4MV.s:295    .text:0000000000000190 .L0 
+     /tmp/ccFPo4MV.s:296    .text:0000000000000190 .L0 
+     /tmp/ccFPo4MV.s:300    .text:000000000000019c .L0 
+     /tmp/ccFPo4MV.s:301    .text:000000000000019c .L0 
+GAS LISTING /tmp/ccFPo4MV.s 			page 15
 
 
    src/syscall_c.cpp:70     .text:000000000000019c .L0 
-     /tmp/ccNUTQna.s:309    .text:00000000000001a4 .L0 
-     /tmp/ccNUTQna.s:310    .text:00000000000001a4 .L0 
-     /tmp/ccNUTQna.s:312    .text:00000000000001a8 .L0 
-     /tmp/ccNUTQna.s:314    .text:00000000000001b0 .L0 
-     /tmp/ccNUTQna.s:316    .text:00000000000001b4 .L0 
-     /tmp/ccNUTQna.s:317    .text:00000000000001b4 .L0 
-     /tmp/ccNUTQna.s:319    .text:00000000000001b8 .L0 
-     /tmp/ccNUTQna.s:321    .text:00000000000001bc .L0 
-     /tmp/ccNUTQna.s:327    .text:00000000000001bc _Z15thread_dispatchv
-     /tmp/ccNUTQna.s:330    .text:00000000000001bc .L0 
-     /tmp/ccNUTQna.s:331    .text:00000000000001bc .L0 
-     /tmp/ccNUTQna.s:332    .text:00000000000001c0 .L0 
-     /tmp/ccNUTQna.s:335    .text:00000000000001c8 .L0 
-     /tmp/ccNUTQna.s:336    .text:00000000000001c8 .L0 
-     /tmp/ccNUTQna.s:338    .text:00000000000001cc .L0 
-     /tmp/ccNUTQna.s:340    .text:00000000000001cc .L0 
-     /tmp/ccNUTQna.s:341    .text:00000000000001cc .L0 
-     /tmp/ccNUTQna.s:345    .text:00000000000001d8 .L0 
-     /tmp/ccNUTQna.s:346    .text:00000000000001dc .L0 
-     /tmp/ccNUTQna.s:348    .text:00000000000001e0 .L0 
-     /tmp/ccNUTQna.s:349    .text:00000000000001e0 .L0 
-     /tmp/ccNUTQna.s:351    .text:00000000000001e4 .L0 
-     /tmp/ccNUTQna.s:353    .text:00000000000001e8 .L0 
-     /tmp/ccNUTQna.s:359    .text:00000000000001e8 _Z11thread_joinP3TCB
-     /tmp/ccNUTQna.s:362    .text:00000000000001e8 .L0 
-     /tmp/ccNUTQna.s:364    .text:00000000000001e8 .L0 
-     /tmp/ccNUTQna.s:365    .text:00000000000001ec .L0 
-     /tmp/ccNUTQna.s:367    .text:00000000000001f0 .L0 
-     /tmp/ccNUTQna.s:369    .text:00000000000001f4 .L0 
-     /tmp/ccNUTQna.s:371    .text:00000000000001f4 .L0 
-     /tmp/ccNUTQna.s:372    .text:00000000000001f8 .L0 
-     /tmp/ccNUTQna.s:373    .text:00000000000001f8 .L0 
-     /tmp/ccNUTQna.s:375    .text:00000000000001fc .L0 
-     /tmp/ccNUTQna.s:377    .text:0000000000000200 .L0 
-     /tmp/ccNUTQna.s:383    .text:0000000000000200 _Z8sem_openPP4_semj
-     /tmp/ccNUTQna.s:386    .text:0000000000000200 .L0 
-     /tmp/ccNUTQna.s:388    .text:0000000000000200 .L0 
-     /tmp/ccNUTQna.s:389    .text:0000000000000204 .L0 
-     /tmp/ccNUTQna.s:391    .text:0000000000000208 .L0 
-     /tmp/ccNUTQna.s:393    .text:000000000000020c .L0 
-     /tmp/ccNUTQna.s:395    .text:000000000000020c .L0 
-     /tmp/ccNUTQna.s:396    .text:000000000000020c .L0 
-     /tmp/ccNUTQna.s:399    .text:0000000000000214 .L0 
-     /tmp/ccNUTQna.s:400    .text:0000000000000214 .L0 
-     /tmp/ccNUTQna.s:402    .text:0000000000000218 .L0 
-     /tmp/ccNUTQna.s:404    .text:000000000000021c .L0 
-     /tmp/ccNUTQna.s:410    .text:000000000000021c _Z9sem_closeP4_sem
-     /tmp/ccNUTQna.s:413    .text:000000000000021c .L0 
-     /tmp/ccNUTQna.s:415    .text:000000000000021c .L0 
-     /tmp/ccNUTQna.s:416    .text:0000000000000220 .L0 
-     /tmp/ccNUTQna.s:418    .text:0000000000000224 .L0 
-     /tmp/ccNUTQna.s:420    .text:0000000000000228 .L0 
-     /tmp/ccNUTQna.s:422    .text:0000000000000228 .L0 
-     /tmp/ccNUTQna.s:423    .text:0000000000000228 .L0 
-     /tmp/ccNUTQna.s:426    .text:0000000000000230 .L0 
-     /tmp/ccNUTQna.s:427    .text:0000000000000230 .L0 
-GAS LISTING /tmp/ccNUTQna.s 			page 16
+     /tmp/ccFPo4MV.s:309    .text:00000000000001a4 .L0 
+     /tmp/ccFPo4MV.s:310    .text:00000000000001a4 .L0 
+     /tmp/ccFPo4MV.s:312    .text:00000000000001a8 .L0 
+     /tmp/ccFPo4MV.s:314    .text:00000000000001b0 .L0 
+     /tmp/ccFPo4MV.s:316    .text:00000000000001b4 .L0 
+     /tmp/ccFPo4MV.s:317    .text:00000000000001b4 .L0 
+     /tmp/ccFPo4MV.s:319    .text:00000000000001b8 .L0 
+     /tmp/ccFPo4MV.s:321    .text:00000000000001bc .L0 
+     /tmp/ccFPo4MV.s:327    .text:00000000000001bc _Z15thread_dispatchv
+     /tmp/ccFPo4MV.s:330    .text:00000000000001bc .L0 
+     /tmp/ccFPo4MV.s:331    .text:00000000000001bc .L0 
+     /tmp/ccFPo4MV.s:332    .text:00000000000001c0 .L0 
+     /tmp/ccFPo4MV.s:335    .text:00000000000001c8 .L0 
+     /tmp/ccFPo4MV.s:336    .text:00000000000001c8 .L0 
+     /tmp/ccFPo4MV.s:338    .text:00000000000001cc .L0 
+     /tmp/ccFPo4MV.s:340    .text:00000000000001cc .L0 
+     /tmp/ccFPo4MV.s:341    .text:00000000000001cc .L0 
+     /tmp/ccFPo4MV.s:345    .text:00000000000001d8 .L0 
+     /tmp/ccFPo4MV.s:346    .text:00000000000001dc .L0 
+     /tmp/ccFPo4MV.s:348    .text:00000000000001e0 .L0 
+     /tmp/ccFPo4MV.s:349    .text:00000000000001e0 .L0 
+     /tmp/ccFPo4MV.s:351    .text:00000000000001e4 .L0 
+     /tmp/ccFPo4MV.s:353    .text:00000000000001e8 .L0 
+     /tmp/ccFPo4MV.s:359    .text:00000000000001e8 _Z11thread_joinP3TCB
+     /tmp/ccFPo4MV.s:362    .text:00000000000001e8 .L0 
+     /tmp/ccFPo4MV.s:364    .text:00000000000001e8 .L0 
+     /tmp/ccFPo4MV.s:365    .text:00000000000001ec .L0 
+     /tmp/ccFPo4MV.s:367    .text:00000000000001f0 .L0 
+     /tmp/ccFPo4MV.s:369    .text:00000000000001f4 .L0 
+     /tmp/ccFPo4MV.s:371    .text:00000000000001f4 .L0 
+     /tmp/ccFPo4MV.s:372    .text:00000000000001f8 .L0 
+     /tmp/ccFPo4MV.s:373    .text:00000000000001f8 .L0 
+     /tmp/ccFPo4MV.s:375    .text:00000000000001fc .L0 
+     /tmp/ccFPo4MV.s:377    .text:0000000000000200 .L0 
+     /tmp/ccFPo4MV.s:383    .text:0000000000000200 _Z8sem_openPP4_semj
+     /tmp/ccFPo4MV.s:386    .text:0000000000000200 .L0 
+     /tmp/ccFPo4MV.s:388    .text:0000000000000200 .L0 
+     /tmp/ccFPo4MV.s:389    .text:0000000000000204 .L0 
+     /tmp/ccFPo4MV.s:391    .text:0000000000000208 .L0 
+     /tmp/ccFPo4MV.s:393    .text:000000000000020c .L0 
+     /tmp/ccFPo4MV.s:395    .text:000000000000020c .L0 
+     /tmp/ccFPo4MV.s:396    .text:000000000000020c .L0 
+     /tmp/ccFPo4MV.s:399    .text:0000000000000214 .L0 
+     /tmp/ccFPo4MV.s:400    .text:0000000000000214 .L0 
+     /tmp/ccFPo4MV.s:402    .text:0000000000000218 .L0 
+     /tmp/ccFPo4MV.s:404    .text:000000000000021c .L0 
+     /tmp/ccFPo4MV.s:410    .text:000000000000021c _Z9sem_closeP4_sem
+     /tmp/ccFPo4MV.s:413    .text:000000000000021c .L0 
+     /tmp/ccFPo4MV.s:415    .text:000000000000021c .L0 
+     /tmp/ccFPo4MV.s:416    .text:0000000000000220 .L0 
+     /tmp/ccFPo4MV.s:418    .text:0000000000000224 .L0 
+     /tmp/ccFPo4MV.s:420    .text:0000000000000228 .L0 
+     /tmp/ccFPo4MV.s:422    .text:0000000000000228 .L0 
+     /tmp/ccFPo4MV.s:423    .text:0000000000000228 .L0 
+     /tmp/ccFPo4MV.s:426    .text:0000000000000230 .L0 
+     /tmp/ccFPo4MV.s:427    .text:0000000000000230 .L0 
+GAS LISTING /tmp/ccFPo4MV.s 			page 16
 
 
-     /tmp/ccNUTQna.s:429    .text:0000000000000234 .L0 
-     /tmp/ccNUTQna.s:431    .text:0000000000000238 .L0 
-     /tmp/ccNUTQna.s:437    .text:0000000000000238 _Z8sem_waitP4_sem
-     /tmp/ccNUTQna.s:440    .text:0000000000000238 .L0 
-     /tmp/ccNUTQna.s:442    .text:0000000000000238 .L0 
-     /tmp/ccNUTQna.s:443    .text:000000000000023c .L0 
-     /tmp/ccNUTQna.s:445    .text:0000000000000240 .L0 
-     /tmp/ccNUTQna.s:447    .text:0000000000000244 .L0 
-     /tmp/ccNUTQna.s:449    .text:0000000000000244 .L0 
-     /tmp/ccNUTQna.s:450    .text:0000000000000244 .L0 
-     /tmp/ccNUTQna.s:453    .text:000000000000024c .L0 
-     /tmp/ccNUTQna.s:454    .text:000000000000024c .L0 
-     /tmp/ccNUTQna.s:456    .text:0000000000000250 .L0 
-     /tmp/ccNUTQna.s:458    .text:0000000000000254 .L0 
-     /tmp/ccNUTQna.s:464    .text:0000000000000254 _Z10sem_signalP4_sem
-     /tmp/ccNUTQna.s:467    .text:0000000000000254 .L0 
-     /tmp/ccNUTQna.s:469    .text:0000000000000254 .L0 
-     /tmp/ccNUTQna.s:470    .text:0000000000000258 .L0 
-     /tmp/ccNUTQna.s:472    .text:000000000000025c .L0 
-     /tmp/ccNUTQna.s:474    .text:0000000000000260 .L0 
-     /tmp/ccNUTQna.s:476    .text:0000000000000260 .L0 
-     /tmp/ccNUTQna.s:477    .text:0000000000000260 .L0 
-     /tmp/ccNUTQna.s:480    .text:0000000000000268 .L0 
-     /tmp/ccNUTQna.s:481    .text:0000000000000268 .L0 
-     /tmp/ccNUTQna.s:483    .text:000000000000026c .L0 
-     /tmp/ccNUTQna.s:485    .text:0000000000000270 .L0 
-     /tmp/ccNUTQna.s:491    .text:0000000000000270 _Z4getcv
-     /tmp/ccNUTQna.s:494    .text:0000000000000270 .L0 
-     /tmp/ccNUTQna.s:495    .text:0000000000000270 .L0 
-     /tmp/ccNUTQna.s:496    .text:0000000000000274 .L0 
-     /tmp/ccNUTQna.s:499    .text:000000000000027c .L0 
-     /tmp/ccNUTQna.s:500    .text:000000000000027c .L0 
-     /tmp/ccNUTQna.s:502    .text:0000000000000280 .L0 
-     /tmp/ccNUTQna.s:504    .text:0000000000000280 .L0 
-     /tmp/ccNUTQna.s:505    .text:0000000000000280 .L0 
-     /tmp/ccNUTQna.s:509    .text:000000000000028c .L0 
-     /tmp/ccNUTQna.s:510    .text:000000000000028c .L0 
+     /tmp/ccFPo4MV.s:429    .text:0000000000000234 .L0 
+     /tmp/ccFPo4MV.s:431    .text:0000000000000238 .L0 
+     /tmp/ccFPo4MV.s:437    .text:0000000000000238 _Z8sem_waitP4_sem
+     /tmp/ccFPo4MV.s:440    .text:0000000000000238 .L0 
+     /tmp/ccFPo4MV.s:442    .text:0000000000000238 .L0 
+     /tmp/ccFPo4MV.s:443    .text:000000000000023c .L0 
+     /tmp/ccFPo4MV.s:445    .text:0000000000000240 .L0 
+     /tmp/ccFPo4MV.s:447    .text:0000000000000244 .L0 
+     /tmp/ccFPo4MV.s:449    .text:0000000000000244 .L0 
+     /tmp/ccFPo4MV.s:450    .text:0000000000000244 .L0 
+     /tmp/ccFPo4MV.s:453    .text:000000000000024c .L0 
+     /tmp/ccFPo4MV.s:454    .text:000000000000024c .L0 
+     /tmp/ccFPo4MV.s:456    .text:0000000000000250 .L0 
+     /tmp/ccFPo4MV.s:458    .text:0000000000000254 .L0 
+     /tmp/ccFPo4MV.s:464    .text:0000000000000254 _Z10sem_signalP4_sem
+     /tmp/ccFPo4MV.s:467    .text:0000000000000254 .L0 
+     /tmp/ccFPo4MV.s:469    .text:0000000000000254 .L0 
+     /tmp/ccFPo4MV.s:470    .text:0000000000000258 .L0 
+     /tmp/ccFPo4MV.s:472    .text:000000000000025c .L0 
+     /tmp/ccFPo4MV.s:474    .text:0000000000000260 .L0 
+     /tmp/ccFPo4MV.s:476    .text:0000000000000260 .L0 
+     /tmp/ccFPo4MV.s:477    .text:0000000000000260 .L0 
+     /tmp/ccFPo4MV.s:480    .text:0000000000000268 .L0 
+     /tmp/ccFPo4MV.s:481    .text:0000000000000268 .L0 
+     /tmp/ccFPo4MV.s:483    .text:000000000000026c .L0 
+     /tmp/ccFPo4MV.s:485    .text:0000000000000270 .L0 
+     /tmp/ccFPo4MV.s:491    .text:0000000000000270 _Z4getcv
+     /tmp/ccFPo4MV.s:494    .text:0000000000000270 .L0 
+     /tmp/ccFPo4MV.s:495    .text:0000000000000270 .L0 
+     /tmp/ccFPo4MV.s:496    .text:0000000000000274 .L0 
+     /tmp/ccFPo4MV.s:499    .text:000000000000027c .L0 
+     /tmp/ccFPo4MV.s:500    .text:000000000000027c .L0 
+     /tmp/ccFPo4MV.s:502    .text:0000000000000280 .L0 
+     /tmp/ccFPo4MV.s:504    .text:0000000000000280 .L0 
+     /tmp/ccFPo4MV.s:505    .text:0000000000000280 .L0 
+     /tmp/ccFPo4MV.s:509    .text:000000000000028c .L0 
+     /tmp/ccFPo4MV.s:510    .text:000000000000028c .L0 
    src/syscall_c.cpp:102    .text:000000000000028c .L0 
-     /tmp/ccNUTQna.s:518    .text:0000000000000294 .L0 
-     /tmp/ccNUTQna.s:519    .text:0000000000000294 .L0 
-     /tmp/ccNUTQna.s:521    .text:0000000000000298 .L0 
-     /tmp/ccNUTQna.s:523    .text:00000000000002a0 .L0 
-     /tmp/ccNUTQna.s:525    .text:00000000000002a4 .L0 
-     /tmp/ccNUTQna.s:526    .text:00000000000002a4 .L0 
-     /tmp/ccNUTQna.s:528    .text:00000000000002a8 .L0 
-     /tmp/ccNUTQna.s:530    .text:00000000000002ac .L0 
-     /tmp/ccNUTQna.s:536    .text:00000000000002ac _Z4putcc
-     /tmp/ccNUTQna.s:539    .text:00000000000002ac .L0 
-     /tmp/ccNUTQna.s:541    .text:00000000000002ac .L0 
-     /tmp/ccNUTQna.s:542    .text:00000000000002b0 .L0 
-     /tmp/ccNUTQna.s:545    .text:00000000000002b8 .L0 
-     /tmp/ccNUTQna.s:546    .text:00000000000002b8 .L0 
-     /tmp/ccNUTQna.s:548    .text:00000000000002bc .L0 
-     /tmp/ccNUTQna.s:551    .text:00000000000002c0 .L0 
-     /tmp/ccNUTQna.s:552    .text:00000000000002c0 .L0 
-     /tmp/ccNUTQna.s:557    .text:00000000000002cc .L0 
-     /tmp/ccNUTQna.s:558    .text:00000000000002d0 .L0 
-GAS LISTING /tmp/ccNUTQna.s 			page 17
+     /tmp/ccFPo4MV.s:518    .text:0000000000000294 .L0 
+     /tmp/ccFPo4MV.s:519    .text:0000000000000294 .L0 
+     /tmp/ccFPo4MV.s:521    .text:0000000000000298 .L0 
+     /tmp/ccFPo4MV.s:523    .text:00000000000002a0 .L0 
+     /tmp/ccFPo4MV.s:525    .text:00000000000002a4 .L0 
+     /tmp/ccFPo4MV.s:526    .text:00000000000002a4 .L0 
+     /tmp/ccFPo4MV.s:528    .text:00000000000002a8 .L0 
+     /tmp/ccFPo4MV.s:530    .text:00000000000002ac .L0 
+     /tmp/ccFPo4MV.s:536    .text:00000000000002ac _Z4putcc
+     /tmp/ccFPo4MV.s:539    .text:00000000000002ac .L0 
+     /tmp/ccFPo4MV.s:541    .text:00000000000002ac .L0 
+     /tmp/ccFPo4MV.s:542    .text:00000000000002b0 .L0 
+     /tmp/ccFPo4MV.s:545    .text:00000000000002b8 .L0 
+     /tmp/ccFPo4MV.s:546    .text:00000000000002b8 .L0 
+     /tmp/ccFPo4MV.s:548    .text:00000000000002bc .L0 
+     /tmp/ccFPo4MV.s:551    .text:00000000000002c0 .L0 
+     /tmp/ccFPo4MV.s:552    .text:00000000000002c0 .L0 
+     /tmp/ccFPo4MV.s:557    .text:00000000000002cc .L0 
+     /tmp/ccFPo4MV.s:558    .text:00000000000002d0 .L0 
+GAS LISTING /tmp/ccFPo4MV.s 			page 17
 
 
-     /tmp/ccNUTQna.s:560    .text:00000000000002d4 .L0 
-     /tmp/ccNUTQna.s:561    .text:00000000000002d4 .L0 
-     /tmp/ccNUTQna.s:563    .text:00000000000002d8 .L0 
-     /tmp/ccNUTQna.s:565    .text:00000000000002dc .L0 
-     /tmp/ccNUTQna.s:571    .text:00000000000002dc .L0 
-     /tmp/ccNUTQna.s:227    .text:000000000000013c .L8
-     /tmp/ccNUTQna.s:243    .text:000000000000015c .L11
-     /tmp/ccNUTQna.s:190    .text:0000000000000110 .L10
-     /tmp/ccNUTQna.s:206    .text:0000000000000120 .L9
-     /tmp/ccNUTQna.s:1241   .debug_abbrev:0000000000000000 .Ldebug_abbrev0
-     /tmp/ccNUTQna.s:1926   .debug_str:000000000000016c .LASF54
-     /tmp/ccNUTQna.s:1988   .debug_str:00000000000003be .LASF55
-     /tmp/ccNUTQna.s:1954   .debug_str:00000000000002c9 .LASF56
-     /tmp/ccNUTQna.s:5      .text:0000000000000000 .Ltext0
-     /tmp/ccNUTQna.s:568    .text:00000000000002dc .Letext0
-     /tmp/ccNUTQna.s:1872   .debug_line:0000000000000000 .Ldebug_line0
-     /tmp/ccNUTQna.s:1936   .debug_str:0000000000000251 .LASF0
-     /tmp/ccNUTQna.s:1912   .debug_str:0000000000000103 .LASF1
-     /tmp/ccNUTQna.s:1904   .debug_str:00000000000000d4 .LASF2
-     /tmp/ccNUTQna.s:1886   .debug_str:000000000000004e .LASF4
-     /tmp/ccNUTQna.s:1910   .debug_str:00000000000000f1 .LASF3
-     /tmp/ccNUTQna.s:1878   .debug_str:0000000000000021 .LASF5
-     /tmp/ccNUTQna.s:1946   .debug_str:0000000000000293 .LASF6
-     /tmp/ccNUTQna.s:1876   .debug_str:000000000000000e .LASF7
-     /tmp/ccNUTQna.s:1898   .debug_str:000000000000009e .LASF8
-     /tmp/ccNUTQna.s:1948   .debug_str:000000000000029a .LASF9
-     /tmp/ccNUTQna.s:1884   .debug_str:0000000000000040 .LASF10
-     /tmp/ccNUTQna.s:1990   .debug_str:00000000000003d0 .LASF11
-     /tmp/ccNUTQna.s:1900   .debug_str:00000000000000b1 .LASF12
-     /tmp/ccNUTQna.s:1974   .debug_str:0000000000000362 .LASF13
-     /tmp/ccNUTQna.s:1944   .debug_str:0000000000000283 .LASF14
-     /tmp/ccNUTQna.s:1916   .debug_str:000000000000011f .LASF15
-     /tmp/ccNUTQna.s:1894   .debug_str:0000000000000073 .LASF16
-     /tmp/ccNUTQna.s:1950   .debug_str:00000000000002aa .LASF17
-     /tmp/ccNUTQna.s:1952   .debug_str:00000000000002c0 .LASF18
-     /tmp/ccNUTQna.s:1882   .debug_str:000000000000003a .LASF19
-     /tmp/ccNUTQna.s:1928   .debug_str:0000000000000230 .LASF20
-     /tmp/ccNUTQna.s:1962   .debug_str:000000000000030c .LASF34
-     /tmp/ccNUTQna.s:1914   .debug_str:0000000000000116 .LASF36
-     /tmp/ccNUTQna.s:537    .text:00000000000002ac .LFB16
-     /tmp/ccNUTQna.s:566    .text:00000000000002dc .LFE16
-     /tmp/ccNUTQna.s:1656   .debug_loc:0000000000000000 .LLST10
-     /tmp/ccNUTQna.s:555    .text:00000000000002cc .LVL36
-     /tmp/ccNUTQna.s:1940   .debug_str:0000000000000269 .LASF21
-     /tmp/ccNUTQna.s:1906   .debug_str:00000000000000e2 .LASF22
-     /tmp/ccNUTQna.s:1980   .debug_str:0000000000000388 .LASF24
-     /tmp/ccNUTQna.s:492    .text:0000000000000270 .LFB15
-     /tmp/ccNUTQna.s:531    .text:00000000000002ac .LFE15
-     /tmp/ccNUTQna.s:507    .text:000000000000028c .LVL33
-     /tmp/ccNUTQna.s:1920   .debug_str:0000000000000132 .LASF23
-     /tmp/ccNUTQna.s:1986   .debug_str:00000000000003a9 .LASF25
-     /tmp/ccNUTQna.s:465    .text:0000000000000254 .LFB14
-     /tmp/ccNUTQna.s:486    .text:0000000000000270 .LFE14
-     /tmp/ccNUTQna.s:1670   .debug_loc:0000000000000039 .LLST9
-     /tmp/ccNUTQna.s:1930   .debug_str:0000000000000235 .LASF26
-     /tmp/ccNUTQna.s:1880   .debug_str:0000000000000028 .LASF27
-     /tmp/ccNUTQna.s:438    .text:0000000000000238 .LFB13
-GAS LISTING /tmp/ccNUTQna.s 			page 18
+     /tmp/ccFPo4MV.s:560    .text:00000000000002d4 .L0 
+     /tmp/ccFPo4MV.s:561    .text:00000000000002d4 .L0 
+     /tmp/ccFPo4MV.s:563    .text:00000000000002d8 .L0 
+     /tmp/ccFPo4MV.s:565    .text:00000000000002dc .L0 
+     /tmp/ccFPo4MV.s:571    .text:00000000000002dc .L0 
+     /tmp/ccFPo4MV.s:227    .text:000000000000013c .L8
+     /tmp/ccFPo4MV.s:243    .text:000000000000015c .L11
+     /tmp/ccFPo4MV.s:190    .text:0000000000000110 .L10
+     /tmp/ccFPo4MV.s:206    .text:0000000000000120 .L9
+     /tmp/ccFPo4MV.s:1241   .debug_abbrev:0000000000000000 .Ldebug_abbrev0
+     /tmp/ccFPo4MV.s:1926   .debug_str:000000000000016c .LASF54
+     /tmp/ccFPo4MV.s:1988   .debug_str:00000000000003be .LASF55
+     /tmp/ccFPo4MV.s:1954   .debug_str:00000000000002c9 .LASF56
+     /tmp/ccFPo4MV.s:5      .text:0000000000000000 .Ltext0
+     /tmp/ccFPo4MV.s:568    .text:00000000000002dc .Letext0
+     /tmp/ccFPo4MV.s:1872   .debug_line:0000000000000000 .Ldebug_line0
+     /tmp/ccFPo4MV.s:1936   .debug_str:0000000000000251 .LASF0
+     /tmp/ccFPo4MV.s:1912   .debug_str:0000000000000103 .LASF1
+     /tmp/ccFPo4MV.s:1904   .debug_str:00000000000000d4 .LASF2
+     /tmp/ccFPo4MV.s:1886   .debug_str:000000000000004e .LASF4
+     /tmp/ccFPo4MV.s:1910   .debug_str:00000000000000f1 .LASF3
+     /tmp/ccFPo4MV.s:1878   .debug_str:0000000000000021 .LASF5
+     /tmp/ccFPo4MV.s:1946   .debug_str:0000000000000293 .LASF6
+     /tmp/ccFPo4MV.s:1876   .debug_str:000000000000000e .LASF7
+     /tmp/ccFPo4MV.s:1898   .debug_str:000000000000009e .LASF8
+     /tmp/ccFPo4MV.s:1948   .debug_str:000000000000029a .LASF9
+     /tmp/ccFPo4MV.s:1884   .debug_str:0000000000000040 .LASF10
+     /tmp/ccFPo4MV.s:1990   .debug_str:00000000000003d0 .LASF11
+     /tmp/ccFPo4MV.s:1900   .debug_str:00000000000000b1 .LASF12
+     /tmp/ccFPo4MV.s:1974   .debug_str:0000000000000362 .LASF13
+     /tmp/ccFPo4MV.s:1944   .debug_str:0000000000000283 .LASF14
+     /tmp/ccFPo4MV.s:1916   .debug_str:000000000000011f .LASF15
+     /tmp/ccFPo4MV.s:1894   .debug_str:0000000000000073 .LASF16
+     /tmp/ccFPo4MV.s:1950   .debug_str:00000000000002aa .LASF17
+     /tmp/ccFPo4MV.s:1952   .debug_str:00000000000002c0 .LASF18
+     /tmp/ccFPo4MV.s:1882   .debug_str:000000000000003a .LASF19
+     /tmp/ccFPo4MV.s:1928   .debug_str:0000000000000230 .LASF20
+     /tmp/ccFPo4MV.s:1962   .debug_str:000000000000030c .LASF34
+     /tmp/ccFPo4MV.s:1914   .debug_str:0000000000000116 .LASF36
+     /tmp/ccFPo4MV.s:537    .text:00000000000002ac .LFB16
+     /tmp/ccFPo4MV.s:566    .text:00000000000002dc .LFE16
+     /tmp/ccFPo4MV.s:1656   .debug_loc:0000000000000000 .LLST10
+     /tmp/ccFPo4MV.s:555    .text:00000000000002cc .LVL36
+     /tmp/ccFPo4MV.s:1940   .debug_str:0000000000000269 .LASF21
+     /tmp/ccFPo4MV.s:1906   .debug_str:00000000000000e2 .LASF22
+     /tmp/ccFPo4MV.s:1980   .debug_str:0000000000000388 .LASF24
+     /tmp/ccFPo4MV.s:492    .text:0000000000000270 .LFB15
+     /tmp/ccFPo4MV.s:531    .text:00000000000002ac .LFE15
+     /tmp/ccFPo4MV.s:507    .text:000000000000028c .LVL33
+     /tmp/ccFPo4MV.s:1920   .debug_str:0000000000000132 .LASF23
+     /tmp/ccFPo4MV.s:1986   .debug_str:00000000000003a9 .LASF25
+     /tmp/ccFPo4MV.s:465    .text:0000000000000254 .LFB14
+     /tmp/ccFPo4MV.s:486    .text:0000000000000270 .LFE14
+     /tmp/ccFPo4MV.s:1670   .debug_loc:0000000000000039 .LLST9
+     /tmp/ccFPo4MV.s:1930   .debug_str:0000000000000235 .LASF26
+     /tmp/ccFPo4MV.s:1880   .debug_str:0000000000000028 .LASF27
+     /tmp/ccFPo4MV.s:438    .text:0000000000000238 .LFB13
+GAS LISTING /tmp/ccFPo4MV.s 			page 18
 
 
-     /tmp/ccNUTQna.s:459    .text:0000000000000254 .LFE13
-     /tmp/ccNUTQna.s:1684   .debug_loc:0000000000000072 .LLST8
-     /tmp/ccNUTQna.s:1908   .debug_str:00000000000000e7 .LASF28
-     /tmp/ccNUTQna.s:1890   .debug_str:000000000000005b .LASF29
-     /tmp/ccNUTQna.s:411    .text:000000000000021c .LFB12
-     /tmp/ccNUTQna.s:432    .text:0000000000000238 .LFE12
-     /tmp/ccNUTQna.s:1918   .debug_str:000000000000012b .LASF30
-     /tmp/ccNUTQna.s:1698   .debug_loc:00000000000000ab .LLST7
-     /tmp/ccNUTQna.s:1968   .debug_str:000000000000033a .LASF31
-     /tmp/ccNUTQna.s:1902   .debug_str:00000000000000c0 .LASF32
-     /tmp/ccNUTQna.s:384    .text:0000000000000200 .LFB11
-     /tmp/ccNUTQna.s:405    .text:000000000000021c .LFE11
-     /tmp/ccNUTQna.s:1712   .debug_loc:00000000000000e4 .LLST6
-     /tmp/ccNUTQna.s:1892   .debug_str:000000000000006e .LASF33
-     /tmp/ccNUTQna.s:1960   .debug_str:0000000000000300 .LASF35
-     /tmp/ccNUTQna.s:1942   .debug_str:000000000000026e .LASF37
-     /tmp/ccNUTQna.s:360    .text:00000000000001e8 .LFB10
-     /tmp/ccNUTQna.s:378    .text:0000000000000200 .LFE10
-     /tmp/ccNUTQna.s:1958   .debug_str:00000000000002f0 .LASF38
-     /tmp/ccNUTQna.s:1896   .debug_str:0000000000000089 .LASF39
-     /tmp/ccNUTQna.s:328    .text:00000000000001bc .LFB9
-     /tmp/ccNUTQna.s:354    .text:00000000000001e8 .LFE9
-     /tmp/ccNUTQna.s:343    .text:00000000000001d8 .LVL23
-     /tmp/ccNUTQna.s:1976   .debug_str:0000000000000372 .LASF40
-     /tmp/ccNUTQna.s:1972   .debug_str:0000000000000351 .LASF41
-     /tmp/ccNUTQna.s:283    .text:0000000000000180 .LFB8
-     /tmp/ccNUTQna.s:322    .text:00000000000001bc .LFE8
-     /tmp/ccNUTQna.s:298    .text:000000000000019c .LVL22
-     /tmp/ccNUTQna.s:1938   .debug_str:000000000000025e .LASF42
-     /tmp/ccNUTQna.s:1964   .debug_str:0000000000000311 .LASF43
-     /tmp/ccNUTQna.s:258    .text:0000000000000164 .LFB7
-     /tmp/ccNUTQna.s:277    .text:0000000000000180 .LFE7
-     /tmp/ccNUTQna.s:1970   .debug_str:0000000000000343 .LASF44
-     /tmp/ccNUTQna.s:1922   .debug_str:000000000000013d .LASF45
-     /tmp/ccNUTQna.s:146    .text:00000000000000b8 .LFB6
-     /tmp/ccNUTQna.s:252    .text:0000000000000164 .LFE6
-     /tmp/ccNUTQna.s:1726   .debug_loc:000000000000011d .LLST2
-     /tmp/ccNUTQna.s:1924   .debug_str:000000000000015e .LASF46
-     /tmp/ccNUTQna.s:1752   .debug_loc:000000000000018f .LLST3
-     /tmp/ccNUTQna.s:1774   .debug_loc:00000000000001ee .LLST4
-     /tmp/ccNUTQna.s:1864   .debug_ranges:0000000000000000 .Ldebug_ranges0
-     /tmp/ccNUTQna.s:1888   .debug_str:0000000000000055 .LASF47
-     /tmp/ccNUTQna.s:1800   .debug_loc:0000000000000260 .LLST5
-     /tmp/ccNUTQna.s:176    .text:00000000000000f0 .LVL9
-     /tmp/ccNUTQna.s:189    .text:0000000000000110 .LVL12
-     /tmp/ccNUTQna.s:240    .text:0000000000000158 .LVL19
-     /tmp/ccNUTQna.s:1956   .debug_str:00000000000002e7 .LASF48
-     /tmp/ccNUTQna.s:1874   .debug_str:0000000000000000 .LASF49
-     /tmp/ccNUTQna.s:98     .text:0000000000000078 .LFB5
-     /tmp/ccNUTQna.s:140    .text:00000000000000b8 .LFE5
-     /tmp/ccNUTQna.s:1819   .debug_loc:00000000000002bc .LLST1
-     /tmp/ccNUTQna.s:116    .text:0000000000000098 .LVL6
-     /tmp/ccNUTQna.s:1978   .debug_str:000000000000037e .LASF50
-     /tmp/ccNUTQna.s:1934   .debug_str:0000000000000243 .LASF51
-     /tmp/ccNUTQna.s:49     .text:0000000000000038 .LFB4
-     /tmp/ccNUTQna.s:92     .text:0000000000000078 .LFE4
-     /tmp/ccNUTQna.s:1984   .debug_str:00000000000003a4 .LASF52
-GAS LISTING /tmp/ccNUTQna.s 			page 19
+     /tmp/ccFPo4MV.s:459    .text:0000000000000254 .LFE13
+     /tmp/ccFPo4MV.s:1684   .debug_loc:0000000000000072 .LLST8
+     /tmp/ccFPo4MV.s:1908   .debug_str:00000000000000e7 .LASF28
+     /tmp/ccFPo4MV.s:1890   .debug_str:000000000000005b .LASF29
+     /tmp/ccFPo4MV.s:411    .text:000000000000021c .LFB12
+     /tmp/ccFPo4MV.s:432    .text:0000000000000238 .LFE12
+     /tmp/ccFPo4MV.s:1918   .debug_str:000000000000012b .LASF30
+     /tmp/ccFPo4MV.s:1698   .debug_loc:00000000000000ab .LLST7
+     /tmp/ccFPo4MV.s:1968   .debug_str:000000000000033a .LASF31
+     /tmp/ccFPo4MV.s:1902   .debug_str:00000000000000c0 .LASF32
+     /tmp/ccFPo4MV.s:384    .text:0000000000000200 .LFB11
+     /tmp/ccFPo4MV.s:405    .text:000000000000021c .LFE11
+     /tmp/ccFPo4MV.s:1712   .debug_loc:00000000000000e4 .LLST6
+     /tmp/ccFPo4MV.s:1892   .debug_str:000000000000006e .LASF33
+     /tmp/ccFPo4MV.s:1960   .debug_str:0000000000000300 .LASF35
+     /tmp/ccFPo4MV.s:1942   .debug_str:000000000000026e .LASF37
+     /tmp/ccFPo4MV.s:360    .text:00000000000001e8 .LFB10
+     /tmp/ccFPo4MV.s:378    .text:0000000000000200 .LFE10
+     /tmp/ccFPo4MV.s:1958   .debug_str:00000000000002f0 .LASF38
+     /tmp/ccFPo4MV.s:1896   .debug_str:0000000000000089 .LASF39
+     /tmp/ccFPo4MV.s:328    .text:00000000000001bc .LFB9
+     /tmp/ccFPo4MV.s:354    .text:00000000000001e8 .LFE9
+     /tmp/ccFPo4MV.s:343    .text:00000000000001d8 .LVL23
+     /tmp/ccFPo4MV.s:1976   .debug_str:0000000000000372 .LASF40
+     /tmp/ccFPo4MV.s:1972   .debug_str:0000000000000351 .LASF41
+     /tmp/ccFPo4MV.s:283    .text:0000000000000180 .LFB8
+     /tmp/ccFPo4MV.s:322    .text:00000000000001bc .LFE8
+     /tmp/ccFPo4MV.s:298    .text:000000000000019c .LVL22
+     /tmp/ccFPo4MV.s:1938   .debug_str:000000000000025e .LASF42
+     /tmp/ccFPo4MV.s:1964   .debug_str:0000000000000311 .LASF43
+     /tmp/ccFPo4MV.s:258    .text:0000000000000164 .LFB7
+     /tmp/ccFPo4MV.s:277    .text:0000000000000180 .LFE7
+     /tmp/ccFPo4MV.s:1970   .debug_str:0000000000000343 .LASF44
+     /tmp/ccFPo4MV.s:1922   .debug_str:000000000000013d .LASF45
+     /tmp/ccFPo4MV.s:146    .text:00000000000000b8 .LFB6
+     /tmp/ccFPo4MV.s:252    .text:0000000000000164 .LFE6
+     /tmp/ccFPo4MV.s:1726   .debug_loc:000000000000011d .LLST2
+     /tmp/ccFPo4MV.s:1924   .debug_str:000000000000015e .LASF46
+     /tmp/ccFPo4MV.s:1752   .debug_loc:000000000000018f .LLST3
+     /tmp/ccFPo4MV.s:1774   .debug_loc:00000000000001ee .LLST4
+     /tmp/ccFPo4MV.s:1864   .debug_ranges:0000000000000000 .Ldebug_ranges0
+     /tmp/ccFPo4MV.s:1888   .debug_str:0000000000000055 .LASF47
+     /tmp/ccFPo4MV.s:1800   .debug_loc:0000000000000260 .LLST5
+     /tmp/ccFPo4MV.s:176    .text:00000000000000f0 .LVL9
+     /tmp/ccFPo4MV.s:189    .text:0000000000000110 .LVL12
+     /tmp/ccFPo4MV.s:240    .text:0000000000000158 .LVL19
+     /tmp/ccFPo4MV.s:1956   .debug_str:00000000000002e7 .LASF48
+     /tmp/ccFPo4MV.s:1874   .debug_str:0000000000000000 .LASF49
+     /tmp/ccFPo4MV.s:98     .text:0000000000000078 .LFB5
+     /tmp/ccFPo4MV.s:140    .text:00000000000000b8 .LFE5
+     /tmp/ccFPo4MV.s:1819   .debug_loc:00000000000002bc .LLST1
+     /tmp/ccFPo4MV.s:116    .text:0000000000000098 .LVL6
+     /tmp/ccFPo4MV.s:1978   .debug_str:000000000000037e .LASF50
+     /tmp/ccFPo4MV.s:1934   .debug_str:0000000000000243 .LASF51
+     /tmp/ccFPo4MV.s:49     .text:0000000000000038 .LFB4
+     /tmp/ccFPo4MV.s:92     .text:0000000000000078 .LFE4
+     /tmp/ccFPo4MV.s:1984   .debug_str:00000000000003a4 .LASF52
+GAS LISTING /tmp/ccFPo4MV.s 			page 19
 
 
-     /tmp/ccNUTQna.s:1837   .debug_loc:0000000000000308 .LLST0
-     /tmp/ccNUTQna.s:69     .text:000000000000005c .LVL3
-     /tmp/ccNUTQna.s:1982   .debug_str:0000000000000391 .LASF57
-     /tmp/ccNUTQna.s:1966   .debug_str:0000000000000321 .LASF58
-     /tmp/ccNUTQna.s:10     .text:0000000000000000 .LFB3
-     /tmp/ccNUTQna.s:43     .text:0000000000000038 .LFE3
-     /tmp/ccNUTQna.s:1932   .debug_str:000000000000023e .LASF53
-     /tmp/ccNUTQna.s:540    .text:00000000000002ac .LVL34
-     /tmp/ccNUTQna.s:553    .text:00000000000002c4 .LVL35
-     /tmp/ccNUTQna.s:468    .text:0000000000000254 .LVL31
-     /tmp/ccNUTQna.s:478    .text:0000000000000264 .LVL32
-     /tmp/ccNUTQna.s:441    .text:0000000000000238 .LVL29
-     /tmp/ccNUTQna.s:451    .text:0000000000000248 .LVL30
-     /tmp/ccNUTQna.s:414    .text:000000000000021c .LVL27
-     /tmp/ccNUTQna.s:424    .text:000000000000022c .LVL28
-     /tmp/ccNUTQna.s:387    .text:0000000000000200 .LVL25
-     /tmp/ccNUTQna.s:397    .text:0000000000000210 .LVL26
-     /tmp/ccNUTQna.s:149    .text:00000000000000b8 .LVL7
-     /tmp/ccNUTQna.s:174    .text:00000000000000e8 .LVL8
-     /tmp/ccNUTQna.s:219    .text:0000000000000130 .LVL14
-     /tmp/ccNUTQna.s:226    .text:000000000000013c .LVL16
-     /tmp/ccNUTQna.s:238    .text:0000000000000150 .LVL18
-     /tmp/ccNUTQna.s:216    .text:000000000000012c .LVL13
-     /tmp/ccNUTQna.s:222    .text:0000000000000134 .LVL15
-     /tmp/ccNUTQna.s:235    .text:0000000000000148 .LVL17
-     /tmp/ccNUTQna.s:178    .text:00000000000000f4 .LVL10
-     /tmp/ccNUTQna.s:187    .text:0000000000000108 .LVL11
-     /tmp/ccNUTQna.s:242    .text:000000000000015c .LVL20
-     /tmp/ccNUTQna.s:247    .text:0000000000000160 .LVL21
-     /tmp/ccNUTQna.s:101    .text:0000000000000078 .LVL4
-     /tmp/ccNUTQna.s:114    .text:0000000000000090 .LVL5
-     /tmp/ccNUTQna.s:52     .text:0000000000000038 .LVL1
-     /tmp/ccNUTQna.s:67     .text:0000000000000054 .LVL2
-     /tmp/ccNUTQna.s:572    .debug_info:0000000000000000 .Ldebug_info0
-     /tmp/ccNUTQna.s:170    .text:00000000000000e4 .LBB3
-     /tmp/ccNUTQna.s:191    .text:0000000000000110 .LBE3
-     /tmp/ccNUTQna.s:244    .text:000000000000015c .LBB4
-     /tmp/ccNUTQna.s:249    .text:0000000000000164 .LBE4
+     /tmp/ccFPo4MV.s:1837   .debug_loc:0000000000000308 .LLST0
+     /tmp/ccFPo4MV.s:69     .text:000000000000005c .LVL3
+     /tmp/ccFPo4MV.s:1982   .debug_str:0000000000000391 .LASF57
+     /tmp/ccFPo4MV.s:1966   .debug_str:0000000000000321 .LASF58
+     /tmp/ccFPo4MV.s:10     .text:0000000000000000 .LFB3
+     /tmp/ccFPo4MV.s:43     .text:0000000000000038 .LFE3
+     /tmp/ccFPo4MV.s:1932   .debug_str:000000000000023e .LASF53
+     /tmp/ccFPo4MV.s:540    .text:00000000000002ac .LVL34
+     /tmp/ccFPo4MV.s:553    .text:00000000000002c4 .LVL35
+     /tmp/ccFPo4MV.s:468    .text:0000000000000254 .LVL31
+     /tmp/ccFPo4MV.s:478    .text:0000000000000264 .LVL32
+     /tmp/ccFPo4MV.s:441    .text:0000000000000238 .LVL29
+     /tmp/ccFPo4MV.s:451    .text:0000000000000248 .LVL30
+     /tmp/ccFPo4MV.s:414    .text:000000000000021c .LVL27
+     /tmp/ccFPo4MV.s:424    .text:000000000000022c .LVL28
+     /tmp/ccFPo4MV.s:387    .text:0000000000000200 .LVL25
+     /tmp/ccFPo4MV.s:397    .text:0000000000000210 .LVL26
+     /tmp/ccFPo4MV.s:149    .text:00000000000000b8 .LVL7
+     /tmp/ccFPo4MV.s:174    .text:00000000000000e8 .LVL8
+     /tmp/ccFPo4MV.s:219    .text:0000000000000130 .LVL14
+     /tmp/ccFPo4MV.s:226    .text:000000000000013c .LVL16
+     /tmp/ccFPo4MV.s:238    .text:0000000000000150 .LVL18
+     /tmp/ccFPo4MV.s:216    .text:000000000000012c .LVL13
+     /tmp/ccFPo4MV.s:222    .text:0000000000000134 .LVL15
+     /tmp/ccFPo4MV.s:235    .text:0000000000000148 .LVL17
+     /tmp/ccFPo4MV.s:178    .text:00000000000000f4 .LVL10
+     /tmp/ccFPo4MV.s:187    .text:0000000000000108 .LVL11
+     /tmp/ccFPo4MV.s:242    .text:000000000000015c .LVL20
+     /tmp/ccFPo4MV.s:247    .text:0000000000000160 .LVL21
+     /tmp/ccFPo4MV.s:101    .text:0000000000000078 .LVL4
+     /tmp/ccFPo4MV.s:114    .text:0000000000000090 .LVL5
+     /tmp/ccFPo4MV.s:52     .text:0000000000000038 .LVL1
+     /tmp/ccFPo4MV.s:67     .text:0000000000000054 .LVL2
+     /tmp/ccFPo4MV.s:572    .debug_info:0000000000000000 .Ldebug_info0
+     /tmp/ccFPo4MV.s:170    .text:00000000000000e4 .LBB3
+     /tmp/ccFPo4MV.s:191    .text:0000000000000110 .LBE3
+     /tmp/ccFPo4MV.s:244    .text:000000000000015c .LBB4
+     /tmp/ccFPo4MV.s:249    .text:0000000000000164 .LBE4
 
 NO UNDEFINED SYMBOLS

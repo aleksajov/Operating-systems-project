@@ -4,6 +4,11 @@
 
 #include "../h/syscall_cpp.hpp"
 
+void Thread::wrapperPolymorphThread(void* t){
+    ((Thread*)t)->run();
+}
+
+
 Thread::Thread(void (*body)(void *), void *arg) :myHandle(nullptr), body(body), arg(arg){}
 
 Thread::~Thread() {
@@ -19,9 +24,7 @@ void Thread::dispatch() {
     thread_dispatch();
 }
 
-Thread::Thread() {
-
-}
+Thread::Thread():myHandle(nullptr),body(wrapperPolymorphThread),arg((void*)this) {}
 
 void Thread::join() {
 
@@ -62,3 +65,4 @@ char Console::getc() {
 void Console::putc(char) {
 
 }
+

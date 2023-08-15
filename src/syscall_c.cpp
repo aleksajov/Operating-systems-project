@@ -38,7 +38,7 @@ int mem_free(void *ptr) {
 
 int thread_create(thread_t *handle, void (*start_routine)(void *), void *arg) {
     if(start_routine!=nullptr){
-        uint64* stack=(uint64*) mem_alloc(DEFAULT_STACK_SIZE*8);
+        char* stack=(char*) mem_alloc(DEFAULT_STACK_SIZE);
         if(stack==nullptr)return -1;
         commonPartSysCalls(0x11, handle, start_routine, arg, stack);
     }

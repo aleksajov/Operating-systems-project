@@ -42,7 +42,7 @@ public:
     }
 
     using Body=void (*)(void*);
-    static TCB* createThread(Body body, uint64* stack, void* arg);
+    static TCB* createThread(Body body, char* stack, void* arg);
 
     static int exit();
 
@@ -66,7 +66,7 @@ private:
     };
 
     Body body;
-    uint64* stack;
+    char* stack;
     Context context;
     uint64 timeSlice;
     bool finished;
@@ -88,7 +88,7 @@ private:
 
     static uint64  timeSliceCounter;
 
-    TCB(Body body, uint64* stack, void* arg, uint64 timeSlice);
+    TCB(Body body, char* stack, void* arg, uint64 timeSlice);
 
 };
 

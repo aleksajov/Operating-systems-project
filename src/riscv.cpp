@@ -47,10 +47,10 @@ void Riscv::handleEcallException(){
             a1- thread_t* handle
              a2- *start_routine
              a3- void* arg
-             a4- uint64* stack
+             a4- char* stack
             */
 
-            TCB* handle= TCB::createThread((TCB::Body)a2, (uint64*)a4, (void*)a3);
+            TCB* handle= TCB::createThread((TCB::Body)a2, (char*)a4, (void*)a3);
 
             if(!handle){
                 __asm__ volatile("sd %0, 0x50(fp)": : "r"(-1));
@@ -142,6 +142,8 @@ void Riscv::handleEcallException(){
     else{
         printString("GRESKA:");
         printInt(scause);
+        printString("\nsepc:");
+        printInt(r_sepc());
         printString("\n");
         while(true);
     }

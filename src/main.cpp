@@ -47,8 +47,8 @@ int main(){
     delete handleIdle;
     delete handleMain;
 
-    /*Scheduler::get();
-    Scheduler::get();*/
+    //Scheduler::get();
+    //Scheduler::get();
 
 
     return 0;

@@ -20,7 +20,7 @@ void TCB::yield() {
     __asm__ volatile("ecall");
 }
 
-TCB *TCB::createThread(TCB::Body body, uint64* stack, void* arg) {
+TCB *TCB::createThread(TCB::Body body, char* stack, void* arg) {
     return new TCB(body, stack, arg, TIME_SLICE);
 }
 
@@ -35,7 +35,7 @@ void TCB::dispatch() {
     TCB::contextSwitch(&old->context, &running->context);
 }
 
-TCB::TCB(TCB::Body body, uint64* stack, void* arg, uint64 timeSlice): body(body),
+TCB::TCB(TCB::Body body, char* stack, void* arg, uint64 timeSlice): body(body),
                                     stack(body!=nullptr? stack : nullptr),
                                     context({(uint64)&threadWrapper,
                                      this->stack!=nullptr? (uint64) &this->stack[DEFAULT_STACK_SIZE] : 0//prvo umanjiti za 1 da bi se uslo u taj region

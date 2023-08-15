@@ -30,12 +30,6 @@ void *mem_alloc(size_t size) {
 }
 
 int mem_free(void *ptr) {
-    /*
-    __asm__ volatile("mv a1, %0": : "r"((uint64)ptr));
-    __asm__ volatile ("mv a0, %0" : : "r"(0x02));
-
-    __asm__ volatile("ecall");
-     */
     commonPartSysCalls(0x02, (uint64)ptr);
     volatile int ret;
     __asm__ volatile ("mv %0, a0": "=r"(ret));
@@ -52,15 +46,16 @@ int thread_create(thread_t *handle, void (*start_routine)(void *), void *arg) {
         commonPartSysCalls(0x11, handle, start_routine, arg, nullptr);
     }
 
-
-
     volatile int ret;
     __asm__ volatile ("mv %0, a0": "=r"(ret));
     return ret;
 }
 
-int time_sleep(time_t) {
-    return 0;
+int time_sleep(time_t t) {
+    commonPartSysCalls(0x31, t);
+    volatile int ret;
+    __asm__ volatile ("mv %0, a0": "=r"(ret));
+    return ret;
 }
 
 int thread_exit() {
@@ -76,23 +71,38 @@ void thread_dispatch() {
 }
 
 void thread_join(thread_t handle) {
-
+    commonPartSysCalls(0x14, handle);
 }
 
 int sem_open(sem_t *handle, unsigned int init) {
-    return 0;
+    commonPartSysCalls(0x21, handle, init);
+    volatile int ret;
+    __asm__ volatile ("mv %0, a0": "=r"(ret));
+    return ret;
 }
 
 int sem_close(sem_t handle) {
-    return 0;
+    if(!handle)return -3;
+    commonPartSysCalls(0x22, handle);
+    volatile int ret;
+    __asm__ volatile ("mv %0, a0": "=r"(ret));
+    return ret;
 }
 
 int sem_wait(sem_t id) {
-    return 0;
+    if(!id)return -3;
+    commonPartSysCalls(0x23, id);
+    volatile int ret;
+    __asm__ volatile ("mv %0, a0": "=r"(ret));
+    return ret;
 }
 
 int sem_signal(sem_t id) {
-    return 0;
+    if(!id)return -3;
+    commonPartSysCalls(0x24, id);
+    volatile int ret;
+    __asm__ volatile ("mv %0, a0": "=r"(ret));
+    return ret;
 }
 
 char getc() {

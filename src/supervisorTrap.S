@@ -1,4 +1,4 @@
-.extern _ZN5Riscv20handleSupervisorTrapEv
+.extern _ZN5Riscv20handleEcallExceptionEv
 .extern _ZN5Riscv14timerInterruptEv
 .extern _ZN5Riscv17hardwareInterruptEv
 .align 4
@@ -18,7 +18,7 @@ ecall_exc:
     sd x\ind, \ind * 8(sp)
     .endr
 
-    call _ZN5Riscv20handleSupervisorTrapEv
+    call _ZN5Riscv20handleEcallExceptionEv
 
     .irp ind, 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
     ld x\ind, \ind * 8(sp)

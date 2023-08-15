@@ -6,6 +6,7 @@
 #define PROJECT_BASE_RISCV_HPP
 
 #include "../lib/hw.h"
+#include "../h/TCB.hpp"
 //sa vezbi 7
 
 class Riscv{
@@ -15,9 +16,6 @@ public:
     //supervisor previous privileged, previousInterruptEnable
     //mora da bude ne inline da se poziva
     static void popSppSpie();
-
-    static void pushRegs();
-    static void popRegs();
 
     static uint64 r_scause();
     static void w_scause(uint64 scause);
@@ -40,7 +38,7 @@ public:
     static void w_sstatus(uint64 sstatus);
 
 
-    enum BitMasSip{
+    enum BitMaskSip{
         SIP_SSIP=(1<<1),//software interrupt pending
         SIP_STIP=(1 << 5),
         SIP_SEIP=(1 << 9)
@@ -53,13 +51,22 @@ public:
 
     static void supervisorTrap();
 
+    struct SleepingElem{
+        TCB* thr;
+        time_t toSleepRel;
+        SleepingElem* next;
+    };
 
+    static int putToSleep(time_t);
+    static void updateSleepingList();
 
 private:
 
-    static void handleSupervisorTrap();
+    static void handleEcallException();
     static void timerInterrupt();
     static void hardwareInterrupt();
+
+    static SleepingElem* headSleeping;
 
 };
 
@@ -130,6 +137,5 @@ inline void Riscv::w_sstatus(uint64 sstatus) {
 inline void Riscv::mc_sstatus(uint64 mask) {
     __asm__ volatile("csrc sstatus, %[mask]"::[mask]"r"(mask));
 }
-
 
 #endif //PROJECT_BASE_RISCV_HPP

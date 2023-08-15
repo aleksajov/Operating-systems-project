@@ -16,10 +16,6 @@ TCB* TCB::running=nullptr;
 bool TCB::newThrUserMode=false;
 
 void TCB::yield() {
-    /*Riscv::pushRegs();
-    TCB::timeSliceCounter=0;
-    TCB::dispatch();
-    Riscv::popRegs();*/
     __asm__ volatile("li a0, 0x13");
     __asm__ volatile("ecall");
 }
@@ -30,7 +26,7 @@ TCB *TCB::createThread(TCB::Body body, uint64* stack, void* arg) {
 
 void TCB::dispatch() {
     TCB* old=running;
-    if(!old->isFinished()){
+    if(!(old->isFinished() || old->isBlocked() || old->isSleeping())){
         Scheduler::put(old);
     }
 
@@ -46,7 +42,10 @@ TCB::TCB(TCB::Body body, uint64* stack, void* arg, uint64 timeSlice): body(body)
                                      }),
                                      timeSlice(timeSlice),
                                      finished(false),
-                                     arg(arg)
+                                     arg(arg),
+                                     blocked(false),
+                                     sleeping(false),
+                                     userMode(TCB::newThrUserMode)
     {
         if(body!=nullptr) Scheduler::put(this);
     }
@@ -56,14 +55,6 @@ TCB::~TCB() {
     delete[] stack;
 }
 
-/*int TCB::thread_exit() {
-    running->setFinished(true);
-    yield();
-    //delete running niti mozda ovde
-    return 0;
-}*/
-
-
 void TCB::threadWrapper() {
     //ukoliko se zeli preci u korisnicki rezim pri pokretanju niti na ovom mestu
     //treba promeniti (naglaseno promeniti a ne samo vratiti stare) privilegije
@@ -71,7 +62,6 @@ void TCB::threadWrapper() {
     Riscv::popSppSpie();
     running->body(running->arg);
     running->setFinished(true);
-    //TCB::yield();
     thread_dispatch();
 }
 
@@ -83,6 +73,26 @@ void *TCB::operator new(uint64 n) {
 void TCB::operator delete[](void *p) {
     MemoryAllocator::free(p);
 }
+
+int TCB::exit() {
+    if(TCB::running->isFinished()){
+        return -1;
+    }
+    else{
+        TCB::running->setFinished(true);
+        TCB::timeSliceCounter=0;
+        TCB::dispatch();
+        return 0;
+    }
+}
+
+void TCB::join(TCB *thr) {
+    while(!thr->isFinished()){
+        TCB::timeSliceCounter=0;
+        TCB::dispatch();
+    }
+}
+
 
 
 

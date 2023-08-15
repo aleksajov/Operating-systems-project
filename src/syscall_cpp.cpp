@@ -3,6 +3,8 @@
 //
 
 #include "../h/syscall_cpp.hpp"
+#include "../h/_sem.hpp"
+
 
 void Thread::wrapperPolymorphThread(void* t){
     ((Thread*)t)->run();
@@ -24,17 +26,34 @@ void Thread::dispatch() {
     thread_dispatch();
 }
 
-Thread::Thread():myHandle(nullptr),body(wrapperPolymorphThread),arg((void*)this) {}
+Thread::Thread():myHandle(nullptr),body(wrapperPolymorphThread),arg(this) {}
 
 void Thread::join() {
-
+    thread_join(myHandle);
 }
 
-int Thread::sleep(time_t) {
-    return 0;
+int Thread::sleep(time_t t) {
+    return time_sleep(t);
 }
 
-Semaphore::Semaphore(unsigned int init) {
+Semaphore::Semaphore(unsigned int init) :myHandle(nullptr){
+    sem_open(&this->myHandle, init);
+}
+
+Semaphore::~Semaphore() {
+    sem_close(myHandle);
+    //delete myHandle;
+}
+
+int Semaphore::wait() {
+    return sem_wait(myHandle);
+}
+
+int Semaphore::signal() {
+    return sem_signal(myHandle);
+}
+
+/*Semaphore::Semaphore(unsigned int init) {
 
 }
 
@@ -48,7 +67,7 @@ int Semaphore::wait() {
 
 int Semaphore::signal() {
     return 0;
-}
+}*/
 
 void PeriodicThread::terminate() {
 
@@ -59,10 +78,12 @@ PeriodicThread::PeriodicThread(time_t period) {
 }
 
 char Console::getc() {
-    return 0;
+    return ::getc();
 }
 
-void Console::putc(char) {
-
+void Console::putc(char c) {
+    ::putc(c);
 }
+
+
 

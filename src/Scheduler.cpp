@@ -10,7 +10,6 @@ Scheduler::Elem* Scheduler::last=nullptr;
 
 void Scheduler::put(TCB *t) {
     Elem* newElem=(Elem*)MemoryAllocator::alloc((sizeof(Elem)+MEM_BLOCK_SIZE-1)/MEM_BLOCK_SIZE);
-    //Elem* newElem=(Elem*) mem_alloc(sizeof (Elem));
     newElem->t=t;
     newElem->next= nullptr;
 
@@ -28,11 +27,11 @@ TCB *Scheduler::get() {
     Elem* elem=first;
     TCB* t=elem->t;
 
-    MemoryAllocator::free(elem);
-    //mem_free(elem);
-
     first=first->next;
     if(first==nullptr)last=nullptr;
+
+
+    MemoryAllocator::free(elem);
 
     return t;
 }

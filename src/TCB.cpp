@@ -21,7 +21,7 @@ void TCB::yield() {
 }
 
 TCB *TCB::createThread(TCB::Body body, char* stack, void* arg) {
-    return new TCB(body, stack, arg, TIME_SLICE);
+    return new TCB(body, stack, arg, DEFAULT_TIME_SLICE);
 }
 
 void TCB::dispatch() {

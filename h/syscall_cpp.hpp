@@ -8,8 +8,8 @@
 #include "syscall_c.hpp"
 
 
-//void* ::operator new (size_t);
-//void ::operator delete (void*);
+void* operator new (size_t);
+void operator delete (void*);
 class Thread {
 public:
     Thread (void (*body)(void*), void* arg);
@@ -41,6 +41,8 @@ public:
 protected:
     PeriodicThread (time_t period);
     virtual void periodicActivation () {}
+    virtual ~PeriodicThread() override;
+    virtual void run()override;
 private:
     time_t period;
 };

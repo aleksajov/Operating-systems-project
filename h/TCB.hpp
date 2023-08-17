@@ -84,7 +84,6 @@ private:
 
     static void threadWrapper();
 
-    static uint64 constexpr TIME_SLICE=DEFAULT_TIME_SLICE;
 
     static uint64  timeSliceCounter;
 

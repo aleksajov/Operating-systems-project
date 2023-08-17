@@ -53,28 +53,23 @@ int Semaphore::signal() {
     return sem_signal(myHandle);
 }
 
-/*Semaphore::Semaphore(unsigned int init) {
-
-}
-
-Semaphore::~Semaphore() {
-
-}
-
-int Semaphore::wait() {
-    return 0;
-}
-
-int Semaphore::signal() {
-    return 0;
-}*/
-
 void PeriodicThread::terminate() {
-
+    period=0;
 }
 
 PeriodicThread::PeriodicThread(time_t period) {
+    this->period=period;
+}
 
+PeriodicThread::~PeriodicThread() {
+    period=0;
+}
+
+void PeriodicThread::run() {
+    while(period!=0){
+        periodicActivation();
+        time_sleep(period);
+    }
 }
 
 char Console::getc() {

@@ -9,6 +9,7 @@
 #include "../test/printing.hpp"
 #include "../h/_sem.hpp"
 #include "../h/Scheduler.hpp"
+#include "../h/_console.hpp"
 
 Riscv::SleepingElem* Riscv::headSleeping=nullptr;
 
@@ -84,13 +85,20 @@ void Riscv::handleEcallException(){
         }
         else if(a0==0x41){
             //char getc();
-            char c=__getc();
+
+            char c=_console::inputBuff_get();
             __asm__ volatile("sd %0, 0x50(fp)": : "r"(c));
+
+            /*char c=__getc();
+            __asm__ volatile("sd %0, 0x50(fp)": : "r"(c));*/
         }
         else if(a0==0x42){
             //void putc()
 
-            __putc((char)a1);
+            char c=(char)a1;
+            _console::outputBuff_put(c);
+
+            //__putc((char)a1);
         }
         else if(a0==0x21){
             //sem_open
@@ -145,7 +153,10 @@ void Riscv::handleEcallException(){
         printString("\nsepc:");
         printInt(r_sepc());
         printString("\n");
-        while(true);
+
+        while(true){
+            //TCB::dispatch();
+        }
     }
 
 }
@@ -171,25 +182,30 @@ void Riscv::timerInterrupt() {
 }
 
 void Riscv::hardwareInterrupt() {
-    uint64 scause=r_scause();
+    /*uint64 scause=r_scause();
     if(scause==0x8000000000000009UL){
         //prekid konzola
         console_handler();
+    }*/
+    uint64 scause=r_scause();
+    if(scause==0x8000000000000009UL){
+        int intNumber=plic_claim();
+
+        if(intNumber==CONSOLE_IRQ){
+            //za getc
+            while((*(char*)CONSOLE_STATUS) & CONSOLE_RX_STATUS_BIT){
+                char c= *(char*)CONSOLE_RX_DATA;
+                _console::inputBuff_put(c);
+            }
+        }
+
+        plic_complete(intNumber);
     }
 }
 
 
 
 void Riscv::popSppSpie() {
-
-
-    //Riscv::mc_sstatus(SSTATUS_SPIE);
-    /*if(TCB::newThrUserMode){
-        Riscv::mc_sstatus(SSTATUS_SPP);
-    }
-    else{
-        Riscv::ms_sstatus(SSTATUS_SPP);
-    }*/
     Riscv::ms_sstatus(SSTATUS_SPIE);
     if(TCB::running->userMode){
         Riscv::mc_sstatus(SSTATUS_SPP);

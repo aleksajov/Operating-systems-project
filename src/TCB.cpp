@@ -44,8 +44,7 @@ TCB::TCB(TCB::Body body, char* stack, void* arg, uint64 timeSlice): body(body),
                                      finished(false),
                                      arg(arg),
                                      blocked(false),
-                                     sleeping(false),
-                                     userMode(TCB::newThrUserMode)
+                                     sleeping(false)
     {
         if(body!=nullptr) Scheduler::put(this);
     }

@@ -73,7 +73,6 @@ private:
     void* arg;
     bool blocked;
     bool sleeping;
-    bool userMode;
 
     static void dispatch();
     static void contextSwitch(Context *old, Context* running);

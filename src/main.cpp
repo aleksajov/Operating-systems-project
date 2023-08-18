@@ -38,7 +38,7 @@ int main(){
     TCB* handleConsumerConsole;
     thread_create(&handleConsumerConsole, _console::consumerConsole,nullptr);
 
-    //thread_dispatch();
+    thread_dispatch();
 
     TCB::newThrUserMode=true;
     TCB* handleUserMain;
@@ -59,12 +59,13 @@ int main(){
     delete handleConsumerConsole;
 
 
-    /*delete _console::inputBuff;
-    delete _console::outputBuff;*/
+    delete _console::inputBuff;
+    delete _console::outputBuff;
 
 
-    //Scheduler::get();
-    //Scheduler::get();
+    /*Scheduler::get();
+    Scheduler::get();*/
 
+    Riscv::mc_sstatus(Riscv::BitMaskSStatus::SSTATUS_SIE);
     return 0;
 }

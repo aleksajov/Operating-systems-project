@@ -86,7 +86,7 @@ void Riscv::handleEcallException(){
         else if(a0==0x41){
             //char getc();
 
-            char c=_console::inputBuff_get();
+            char c= _console::inputBuff_take();
             __asm__ volatile("sd %0, 0x50(fp)": : "r"(c));
 
             /*char c=__getc();
@@ -207,7 +207,7 @@ void Riscv::hardwareInterrupt() {
 
 void Riscv::popSppSpie() {
     Riscv::ms_sstatus(SSTATUS_SPIE);
-    if(TCB::running->userMode){
+    if(TCB::newThrUserMode){
         Riscv::mc_sstatus(SSTATUS_SPP);
     }
     else{

@@ -17,7 +17,8 @@ public:
     ~BoundedBuffer();
 
     void put(char);
-    char take();
+    char takeFromInterrupt();
+    char takeFromSysThread();
 
 private:
     char* buffer;
@@ -28,10 +29,10 @@ private:
 class _console{
 public:
     static void inputBuff_put(char);
-    static char inputBuff_get();
+    static char inputBuff_take();
 
     static void outputBuff_put(char);
-    static char outputBuff_get();
+    static char outputBuff_take();
 
     static void consumerConsole(void*);
 

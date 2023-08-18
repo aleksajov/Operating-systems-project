@@ -12,7 +12,7 @@ BoundedBuffer* _console::inputBuff= nullptr;
 void _console::consumerConsole(void*){
     while(true) {
         while ((*(char *) CONSOLE_STATUS) & CONSOLE_TX_STATUS_BIT) {
-            char c = _console::outputBuff_get();
+            char c = _console::outputBuff_take();
             *(char *) CONSOLE_TX_DATA = c;
         }
     }
@@ -33,10 +33,8 @@ void BoundedBuffer::put(char c) {
 }
 
 
-char BoundedBuffer::take() {
-    //poziva se ovaj wait dok nije usao u prekid sto nije dobro
-    //itemAvailable->wait();
-    sem_wait(itemAvailable);
+char BoundedBuffer::takeFromInterrupt() {
+    itemAvailable->wait();
     char c=buffer[head];
     head=(head+1)%BUFF_CAP;
     spaceAvailable->signal();
@@ -51,19 +49,27 @@ BoundedBuffer::~BoundedBuffer() {
     sem_close(spaceAvailable);
 }
 
+char BoundedBuffer::takeFromSysThread() {
+    sem_wait(itemAvailable);
+    char c=buffer[head];
+    head=(head+1)%BUFF_CAP;
+    sem_signal(spaceAvailable);
+    return c;
+}
+
 void _console::inputBuff_put(char c) {
     inputBuff->put(c);
 }
 
-char _console::inputBuff_get() {
-    return inputBuff->take();
+char _console::inputBuff_take() {
+    return inputBuff->takeFromInterrupt();
 }
 
 void _console::outputBuff_put(char c) {
     outputBuff->put(c);
 }
 
-char _console::outputBuff_get() {
-    return outputBuff->take();
+char _console::outputBuff_take() {
+    return outputBuff->takeFromSysThread();
 }
 

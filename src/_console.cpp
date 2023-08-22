@@ -19,7 +19,7 @@ void _console::consumerConsole(void*){
 }
 
 
-BoundedBuffer::BoundedBuffer():head(0), tail(0){
+BoundedBuffer::BoundedBuffer():head(0), tail(0), count(0){
     buffer=(char*)MemoryAllocator::alloc((BUFF_CAP+MEM_BLOCK_SIZE-1)/MEM_BLOCK_SIZE);
     spaceAvailable=_sem::open(BUFF_CAP);
     itemAvailable=_sem::open(0);
@@ -29,6 +29,7 @@ void BoundedBuffer::put(char c) {
     spaceAvailable->wait();
     buffer[tail]=c;
     tail=(tail+1)%BUFF_CAP;
+    count++;
     itemAvailable->signal();
 }
 
@@ -37,6 +38,7 @@ char BoundedBuffer::takeFromInterrupt() {
     itemAvailable->wait();
     char c=buffer[head];
     head=(head+1)%BUFF_CAP;
+    count--;
     spaceAvailable->signal();
     return c;
 }
@@ -53,8 +55,13 @@ char BoundedBuffer::takeFromSysThread() {
     sem_wait(itemAvailable);
     char c=buffer[head];
     head=(head+1)%BUFF_CAP;
+    count--;
     sem_signal(spaceAvailable);
     return c;
+}
+
+bool BoundedBuffer::isFull() {
+    return count==BUFF_CAP;
 }
 
 void _console::inputBuff_put(char c) {
@@ -71,5 +78,9 @@ void _console::outputBuff_put(char c) {
 
 char _console::outputBuff_take() {
     return outputBuff->takeFromSysThread();
+}
+
+bool _console::inputBuff_full() {
+    return inputBuff->isFull();
 }
 

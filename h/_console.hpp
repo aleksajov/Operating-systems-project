@@ -20,9 +20,11 @@ public:
     char takeFromInterrupt();
     char takeFromSysThread();
 
+    bool isFull();
+
 private:
     char* buffer;
-    int head, tail;
+    int head, tail, count;
     _sem* spaceAvailable, *itemAvailable;
 };
 
@@ -30,6 +32,7 @@ class _console{
 public:
     static void inputBuff_put(char);
     static char inputBuff_take();
+    static bool inputBuff_full();
 
     static void outputBuff_put(char);
     static char outputBuff_take();

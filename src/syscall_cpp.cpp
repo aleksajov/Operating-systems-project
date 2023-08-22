@@ -14,7 +14,7 @@ void Thread::wrapperPolymorphThread(void* t){
 Thread::Thread(void (*body)(void *), void *arg) :myHandle(nullptr), body(body), arg(arg){}
 
 Thread::~Thread() {
-    //myHandle->setFinished(true);
+    thread_join(myHandle);
     delete myHandle;
 }
 

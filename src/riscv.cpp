@@ -1,10 +1,8 @@
 //
 // Created by os on 7/24/23.
 //
-//sa vezbi 7
+
 #include "../h/riscv.hpp"
-#include "../lib/console.h"
-#include "../h/TCB.hpp"
 #include "../h/MemoryAllocator.hpp"
 #include "../test/printing.hpp"
 #include "../h/_sem.hpp"
@@ -57,7 +55,6 @@ void Riscv::handleEcallException(){
                 __asm__ volatile("sd %0, 0x50(fp)": : "r"(-1));
             }
             else{
-                //*han=(thread_t)handle;
                 TCB** retHandle=(TCB**)a1;
                 *retHandle=handle;
                 __asm__ volatile("sd %0, 0x50(fp)": : "r"(0));
@@ -66,15 +63,6 @@ void Riscv::handleEcallException(){
         }
         else if(a0==0x12){
             //thread_exit()
-            /*if(TCB::running->isFinished()){
-                __asm__ volatile("sd %0, 0x50(fp)": : "r"(-1));
-            }
-            else{
-                //TCB* exited=TCB::running;
-                TCB::running->setFinished(true);
-                TCB::dispatch();
-                //delete exited; ovde se nikad ne vraca
-            }*/
             int stat=TCB::exit();
             __asm__ volatile("sd %0, 0x50(fp)": : "r"(stat));
         }
@@ -93,7 +81,7 @@ void Riscv::handleEcallException(){
             __asm__ volatile("sd %0, 0x50(fp)": : "r"(c));*/
         }
         else if(a0==0x42){
-            //void putc()
+            //void putc(c)
 
             char c=(char)a1;
             _console::outputBuff_put(c);
@@ -182,18 +170,14 @@ void Riscv::timerInterrupt() {
 }
 
 void Riscv::hardwareInterrupt() {
-    /*uint64 scause=r_scause();
-    if(scause==0x8000000000000009UL){
-        //prekid konzola
-        console_handler();
-    }*/
+
     uint64 scause=r_scause();
     if(scause==0x8000000000000009UL){
         int intNumber=plic_claim();
 
         if(intNumber==CONSOLE_IRQ){
             //za getc
-            while((*(char*)CONSOLE_STATUS) & CONSOLE_RX_STATUS_BIT){
+            while((!_console::inputBuff_full()) && ((*(char*)CONSOLE_STATUS) & CONSOLE_RX_STATUS_BIT)){
                 char c= *(char*)CONSOLE_RX_DATA;
                 _console::inputBuff_put(c);
             }
@@ -201,6 +185,12 @@ void Riscv::hardwareInterrupt() {
 
         plic_complete(intNumber);
     }
+
+    /*uint64 scause=r_scause();
+    if(scause==0x8000000000000009UL){
+        //prekid konzola
+        console_handler();
+    }*/
 }
 
 

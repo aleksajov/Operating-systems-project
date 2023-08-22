@@ -44,7 +44,7 @@ int main(){
     TCB* handleUserMain;
     thread_create(&handleUserMain, userMainWrapper, nullptr);
 
-    Riscv::ms_sstatus(Riscv::SSTATUS_SIE);//dozvoljavanje prekida
+    Riscv::ms_sstatus(Riscv::SSTATUS_SIE);
 
     while (!handleUserMain->isFinished()){
         thread_dispatch();
@@ -62,6 +62,7 @@ int main(){
     delete _console::inputBuff;
     delete _console::outputBuff;
 
+    delete Riscv::headSleeping;
 
     /*Scheduler::get();
     Scheduler::get();*/

@@ -2,11 +2,10 @@
 // Created by os on 7/18/23.
 //
 
-//sa vezbi 7
+//sa vezbi  6 i 7 iskoriscen deo
 
 #include "../h/TCB.hpp"
 #include "../h/Scheduler.hpp"
-#include "../lib/hw.h"
 #include "../h/syscall_c.hpp"
 #include "../h/riscv.hpp"
 #include "../h/MemoryAllocator.hpp"
@@ -55,9 +54,6 @@ TCB::~TCB() {
 }
 
 void TCB::threadWrapper() {
-    //ukoliko se zeli preci u korisnicki rezim pri pokretanju niti na ovom mestu
-    //treba promeniti (naglaseno promeniti a ne samo vratiti stare) privilegije
-    //pop SPP i vratiti SPIE?
     Riscv::popSppSpie();
     running->body(running->arg);
     running->setFinished(true);

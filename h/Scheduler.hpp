@@ -13,9 +13,6 @@ public:
     static void put(TCB* t);
     static TCB* get();
 
-    Scheduler(const Scheduler&)=delete;
-    Scheduler& operator=(const Scheduler&)=delete;
-
     struct Elem{
         TCB* t;
         Elem* next;

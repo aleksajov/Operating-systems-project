@@ -7,14 +7,13 @@
 
 #include "../lib/hw.h"
 #include "../h/TCB.hpp"
-//sa vezbi 7
 
+//sa vezbi 7
 class Riscv{
 
 public:
 
-    //supervisor previous privileged, previousInterruptEnable
-    //mora da bude ne inline da se poziva
+    //mora da bude ne inline da bi se u ra upisalo mesto povratka
     static void popSppSpie();
 
     static uint64 r_scause();
@@ -67,6 +66,8 @@ private:
     static void hardwareInterrupt();
 
     static SleepingElem* headSleeping;
+
+    friend int main();
 
 };
 

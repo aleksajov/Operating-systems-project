@@ -34,7 +34,6 @@ void* MemoryAllocator::alloc(size_t sz) {
             firstFreeSeg=free->next;
         }
         taken->size=oldFreeSize;
-        //taken->next=next;
     }
     else if(oldFreeSize-sz-1>=2){
 
@@ -48,7 +47,6 @@ void* MemoryAllocator::alloc(size_t sz) {
             firstFreeSeg=free;
         }
         taken->size=sz+1;
-        //taken->next=free;proveriti da li je potrebno jer ako se alocira segment odmah iza alociranog u taken->next prethodnog ostaje nekonzistentno stanje
     }
 
     taken->next=nullptr;
@@ -69,17 +67,17 @@ int MemoryAllocator::free(void *ptr) {
     }
 
     if(firstFreeSeg>freeFromAddr){
-        //mogu da se spoje
         if((char*)freeFromAddr+freeFromAddr->size*MEM_BLOCK_SIZE==(char*)firstFreeSeg){
             freeFromAddr->size+=firstFreeSeg->size;
             freeFromAddr->next=firstFreeSeg->next;
             firstFreeSeg=freeFromAddr;
             return 0;
         }
-        //ne mogu da se spoje
-        freeFromAddr->next=firstFreeSeg;
-        firstFreeSeg=freeFromAddr;
-        return 0;
+        else{
+            freeFromAddr->next=firstFreeSeg;
+            firstFreeSeg=freeFromAddr;
+            return 0;
+        }
     }
 
     MemSeg* nextFree=firstFreeSeg, *prev=nullptr;
@@ -94,13 +92,11 @@ int MemoryAllocator::free(void *ptr) {
     if(nextFree==nullptr){
         //dealokacija segmenta do kraja hipa
         if((char*)prev+prev->size*MEM_BLOCK_SIZE==(char*)freeFromAddr){
-            //mogu da se spoje
             prev->size+=freeFromAddr->size;
             //prev->next=nullptr;
             return 0;
         }
         else{
-            //ne mogu da se spoje
             freeFromAddr->next=nullptr;
             prev->next=freeFromAddr;
             return 0;
@@ -108,8 +104,7 @@ int MemoryAllocator::free(void *ptr) {
 
     }
 
-    //proveriti ujutru dobro
-    //moze da se spoji sa prethodnim
+
     if((char*)prev+prev->size*MEM_BLOCK_SIZE==(char*)freeFromAddr){
         prev->size+=freeFromAddr->size;
         if((char*)prev+prev->size*MEM_BLOCK_SIZE==(char*)nextFree){

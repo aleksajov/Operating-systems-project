@@ -2,7 +2,7 @@
 // Created by os on 7/18/23.
 //
 
-//sa vezbi 7
+//sa vezbi 6 i 7 iskoriscen deo
 
 #ifndef PROJECT_BASE_TCB_HPP
 #define PROJECT_BASE_TCB_HPP

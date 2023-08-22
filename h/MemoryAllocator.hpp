@@ -20,9 +20,6 @@ public:
 
     static void initialize();
 
-    MemoryAllocator(const MemoryAllocator&)=delete;
-    MemoryAllocator& operator=(const MemoryAllocator&)=delete;
-
 private:
     static MemSeg* firstFreeSeg;
 

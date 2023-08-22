@@ -1,6 +1,6 @@
 //
 // Created by os on 7/21/23.
-// sa vezbi
+// sa vezbi 7
 #include "../h/syscall_c.hpp"
 
 void *operator new(uint64 n)

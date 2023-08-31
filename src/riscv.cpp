@@ -43,23 +43,25 @@ void Riscv::handleEcallException(){
 
         else if(a0==0x11){
             /*thread_create
-            a1- thread_t* handle
+            a1- thread_t* retHandle
              a2- *start_routine
              a3- void* arg
              a4- char* stack
             */
 
-            TCB* handle= TCB::createThread((TCB::Body)a2, (char*)a4, (void*)a3);
-
-            if(!handle){
-                __asm__ volatile("sd %0, 0x50(fp)": : "r"(-1));
-            }
+            TCB** retHandle=(TCB**)a1;
+            if(!retHandle)__asm__ volatile("sd %0, 0x50(fp)": : "r"(-2));
             else{
-                TCB** retHandle=(TCB**)a1;
-                *retHandle=handle;
-                __asm__ volatile("sd %0, 0x50(fp)": : "r"(0));
-            }
+                TCB* handle= TCB::createThread((TCB::Body)a2, (char*)a4, (void*)a3);
 
+                if(!handle){
+                    __asm__ volatile("sd %0, 0x50(fp)": : "r"(-1));
+                }
+                else{
+                    *retHandle=handle;
+                    __asm__ volatile("sd %0, 0x50(fp)": : "r"(0));
+                }
+            }
         }
         else if(a0==0x12){
             //thread_exit()
@@ -90,35 +92,48 @@ void Riscv::handleEcallException(){
         }
         else if(a0==0x21){
             //sem_open
-            //a1 - sem_t* handle
+            //a1 - sem_t* retHandle
             //a2 - unsigned int init
-            _sem* handle=_sem::open((int)a2);
-            if(!handle){
-                __asm__ volatile("sd %0, 0x50(fp)": : "r"(-1));
-            }
+
+            _sem** retHandle=(_sem**)a1;
+            if(!retHandle)__asm__ volatile("sd %0, 0x50(fp)": : "r"(-2));
             else{
-                _sem** retHandle=(_sem**)a1;
-                *retHandle=handle;
-                __asm__ volatile("sd %0, 0x50(fp)": : "r"(0));
+                _sem* handle=_sem::open((int)a2);
+                if(!handle){
+                    __asm__ volatile("sd %0, 0x50(fp)": : "r"(-1));
+                }
+                else{
+                    *retHandle=handle;
+                    __asm__ volatile("sd %0, 0x50(fp)": : "r"(0));
+                }
             }
         }
         else if(a0==0x23){
             //sem_wait(sem_t id)
             _sem* handle=(_sem*) a1;
-            int stat=handle->wait();
-            __asm__ volatile("sd %0, 0x50(fp)": : "r"(stat));
+            if(!handle)__asm__ volatile("sd %0, 0x50(fp)": : "r"(-2));
+            else{
+                int stat=handle->wait();
+                __asm__ volatile("sd %0, 0x50(fp)": : "r"(stat));
+            }
         }
         else if(a0==0x22){
             //sem_close(sem_t handle)
             _sem* handle=(_sem*) a1;
-            int stat=handle->close();
-            __asm__ volatile("sd %0, 0x50(fp)": : "r"(stat));
+            if(!handle)__asm__ volatile("sd %0, 0x50(fp)": : "r"(-2));
+            else{
+                int stat=handle->close();
+                __asm__ volatile("sd %0, 0x50(fp)": : "r"(stat));
+            }
         }
         else if(a0==0x24){
             //sem_signal(sem_t id)
             _sem* handle=(_sem*) a1;
-            int stat=handle->signal();
-            __asm__ volatile("sd %0, 0x50(fp)": : "r"(stat));
+            if(!handle)__asm__ volatile("sd %0, 0x50(fp)": : "r"(-2));
+            else{
+                int stat=handle->signal();
+                __asm__ volatile("sd %0, 0x50(fp)": : "r"(stat));
+            }
         }
         else if(a0==0x14){
             //thread_join(thread_t)
@@ -142,55 +157,39 @@ void Riscv::handleEcallException(){
         printInt(r_sepc());
         printString("\n");
 
-        while(true){
-            //TCB::dispatch();
-        }
+        while(true){ }
     }
 
 }
 
 void Riscv::timerInterrupt() {
-    uint64 scause=r_scause();
-    if(scause==0x8000000000000001UL){
-        //prekid od tajmera, softverski prekid
+    //prekid od tajmera, softverski prekid
 
-        updateSleepingList();
+    updateSleepingList();
 
-        TCB::timeSliceCounter++;
-        if(TCB::timeSliceCounter>=TCB::running->getTimeSlice()){
-            uint64 volatile sepc=r_sepc();
-            uint64 volatile sstatus=r_sstatus();
-            TCB::timeSliceCounter=0;
-            TCB::dispatch();
-            w_sstatus(sstatus);
-            w_sepc(sepc);
-        }
-        mc_sip(SIP_SSIP);
+    TCB::timeSliceCounter++;
+    if(TCB::timeSliceCounter>=TCB::running->getTimeSlice()){
+        uint64 volatile sepc=r_sepc();
+        uint64 volatile sstatus=r_sstatus();
+        TCB::timeSliceCounter=0;
+        TCB::dispatch();
+        w_sstatus(sstatus);
+        w_sepc(sepc);
     }
+    mc_sip(SIP_SSIP);
 }
 
 void Riscv::hardwareInterrupt() {
+    int intNumber=plic_claim();
 
-    uint64 scause=r_scause();
-    if(scause==0x8000000000000009UL){
-        int intNumber=plic_claim();
-
-        if(intNumber==CONSOLE_IRQ){
-            //za getc
-            while((!_console::inputBuff_full()) && ((*(char*)CONSOLE_STATUS) & CONSOLE_RX_STATUS_BIT)){
-                char c= *(char*)CONSOLE_RX_DATA;
-                _console::inputBuff_put(c);
-            }
+    if(intNumber==CONSOLE_IRQ){
+        while((!_console::inputBuff_full()) && ((*(char*)CONSOLE_STATUS) & CONSOLE_RX_STATUS_BIT)){
+            char c= *(char*)CONSOLE_RX_DATA;
+            _console::inputBuff_put(c);
         }
-
-        plic_complete(intNumber);
     }
 
-    /*uint64 scause=r_scause();
-    if(scause==0x8000000000000009UL){
-        //prekid konzola
-        console_handler();
-    }*/
+    plic_complete(intNumber);
 }
 
 

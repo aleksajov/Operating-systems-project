@@ -4,7 +4,6 @@
 
 
 #include "../h/syscall_c.hpp"
-#include "../lib/console.h"
 
 void commonPartSysCalls(int code, ...){
     __asm__ volatile("ecall");

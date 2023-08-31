@@ -14,11 +14,6 @@ uint64  TCB::timeSliceCounter=0;
 TCB* TCB::running=nullptr;
 bool TCB::newThrUserMode=false;
 
-void TCB::yield() {
-    __asm__ volatile("li a0, 0x13");
-    __asm__ volatile("ecall");
-}
-
 TCB *TCB::createThread(TCB::Body body, char* stack, void* arg) {
     return new TCB(body, stack, arg, DEFAULT_TIME_SLICE);
 }
@@ -70,18 +65,14 @@ void TCB::operator delete[](void *p) {
 }
 
 int TCB::exit() {
-    if(TCB::running->isFinished()){
-        return -1;
-    }
-    else{
-        TCB::running->setFinished(true);
-        TCB::timeSliceCounter=0;
-        TCB::dispatch();
-        return 0;
-    }
+    TCB::running->setFinished(true);
+    TCB::timeSliceCounter=0;
+    TCB::dispatch();
+    return 0;
 }
 
 void TCB::join(TCB *thr) {
+    if(!thr)return;
     while(!thr->isFinished()){
         TCB::timeSliceCounter=0;
         TCB::dispatch();

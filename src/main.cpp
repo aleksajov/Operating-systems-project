@@ -6,7 +6,6 @@
 #include "../h/syscall_c.hpp"
 #include "../h/riscv.hpp"
 #include "../test/printing.hpp"
-#include "../h/Scheduler.hpp"
 #include "../h/_console.hpp"
 
 extern void userMain();
@@ -51,21 +50,19 @@ int main(){
     }
 
 
-    thread_dispatch();//da nit za ispis na konzolu odradi pre returna
+    thread_dispatch();
 
     delete handleUserMain;
     delete handleIdle;
     delete handleMain;
     delete handleConsumerConsole;
 
-
+/*
     delete _console::inputBuff;
-    delete _console::outputBuff;
+    delete _console::outputBuff;*/
 
-    delete Riscv::headSleeping;
+    //delete Riscv::headSleeping;
 
-    /*Scheduler::get();
-    Scheduler::get();*/
 
     Riscv::mc_sstatus(Riscv::BitMaskSStatus::SSTATUS_SIE);
     return 0;

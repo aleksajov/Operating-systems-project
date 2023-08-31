@@ -44,9 +44,7 @@ char BoundedBuffer::takeFromInterrupt() {
 }
 
 BoundedBuffer::~BoundedBuffer() {
-    MemoryAllocator::free(buffer);
-    /*itemAvailable->close();
-    spaceAvailable->close();*/
+    mem_free(buffer);
     sem_close(itemAvailable);
     sem_close(spaceAvailable);
 }

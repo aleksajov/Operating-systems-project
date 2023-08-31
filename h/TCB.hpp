@@ -48,10 +48,6 @@ public:
 
     static void join(TCB*);
 
-    //ne koristiti
-    static void yield();
-
-
     static TCB* running;
 
     static bool newThrUserMode;
